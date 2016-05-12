@@ -11,5 +11,6 @@
   <modules>
     <module>GERENCIADOR-WEB</module>
     <module>ISPO-CLIENTEWS</module>
+    <module>GERENCIADOR-ACESSO</module>
   </modules>
 </project>

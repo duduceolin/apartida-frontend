@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://isoccer.com.br/servicos/UsuarioService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="UsuarioService" targetNamespace="http://isoccer.com.br/servicos/UsuarioService">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://isoccer.com.br/servicos/UsuarioService" elementFormDefault="unqualified" targetNamespace="http://isoccer.com.br/servicos/UsuarioService" version="1.0">
+
+  <xs:element name="BuscarUsuarioDTO" type="tns:buscarUsuarioDTO"/>
+
+  <xs:element name="InValidarUsuario" type="tns:inValidarUsuario"/>
+
+  <xs:element name="buscarTotalUsuario" type="tns:buscarTotalUsuario"/>
+
+  <xs:element name="buscarTotalUsuarioResponse" type="tns:buscarTotalUsuarioResponse"/>
+
+  <xs:element name="cadastrarUsuario" type="tns:cadastrarUsuario"/>
+
+  <xs:element name="cadastrarUsuarioResponse" type="tns:cadastrarUsuarioResponse"/>
+
+  <xs:element name="validarUsuario" type="tns:validarUsuario"/>
+
+  <xs:element name="validarUsuarioResponse" type="tns:validarUsuarioResponse"/>
+
+  <xs:complexType name="validarUsuario">
+    <xs:sequence>
+      <xs:element name="inValidarUsuario" type="tns:inValidarUsuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="inValidarUsuario">
+    <xs:sequence>
+      <xs:element name="dados" type="tns:buscarUsuarioDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buscarUsuarioDTO">
+    <xs:sequence>
+      <xs:element name="login" type="xs:string"/>
+      <xs:element name="senha" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuarioValido" type="tns:outValidarUsuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="outValidarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuarioValido" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buscarTotalUsuario">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="buscarTotalUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalUsuario" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cadastrarUsuario">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="cadastrarUsuarioResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarTotalUsuarioResponse">
+    <wsdl:part element="tns:buscarTotalUsuarioResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validarUsuarioResponse">
+    <wsdl:part element="tns:validarUsuarioResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cadastrarUsuarioResponse">
+    <wsdl:part element="tns:cadastrarUsuarioResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarTotalUsuario">
+    <wsdl:part element="tns:buscarTotalUsuario" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cadastrarUsuario">
+    <wsdl:part element="tns:cadastrarUsuario" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validarUsuario">
+    <wsdl:part element="tns:validarUsuario" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UsuarioService">
+    <wsdl:operation name="validarUsuario">
+      <wsdl:input message="tns:validarUsuario" name="validarUsuario">
+    </wsdl:input>
+      <wsdl:output message="tns:validarUsuarioResponse" name="validarUsuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTotalUsuario">
+      <wsdl:input message="tns:buscarTotalUsuario" name="buscarTotalUsuario">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarTotalUsuarioResponse" name="buscarTotalUsuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarUsuario">
+      <wsdl:input message="tns:cadastrarUsuario" name="cadastrarUsuario">
+    </wsdl:input>
+      <wsdl:output message="tns:cadastrarUsuarioResponse" name="cadastrarUsuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UsuarioServiceSoapBinding" type="tns:UsuarioService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="buscarTotalUsuario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarTotalUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarTotalUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarUsuario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="validarUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validarUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarUsuario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cadastrarUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cadastrarUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsuarioService">
+    <wsdl:port binding="tns:UsuarioServiceSoapBinding" name="UsuarioServicePort">
+      <soap:address location="http://localhost:8080/ISPO-EJB/UsuarioService/UsuarioService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

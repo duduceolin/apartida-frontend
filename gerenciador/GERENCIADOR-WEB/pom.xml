@@ -95,6 +95,12 @@
             <version>1.6.3</version>
         </dependency>
         
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>GERENCIADOR-ACESSO</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
     </dependencies>
 
     <build>
