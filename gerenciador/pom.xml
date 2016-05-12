@@ -10,5 +10,6 @@
     </properties>
   <modules>
     <module>GERENCIADOR-WEB</module>
+    <module>ISPO-CLIENTEWS</module>
   </modules>
 </project>
