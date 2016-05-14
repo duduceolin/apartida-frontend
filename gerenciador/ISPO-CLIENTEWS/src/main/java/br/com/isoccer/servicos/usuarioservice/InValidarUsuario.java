@@ -1,5 +1,5 @@
 
-package br.com.isports.clientews.usuarioservice;
+package br.com.isoccer.servicos.usuarioservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="dados" type="{http://isoccer.com.br/servicos/UsuarioService}buscarUsuarioDTO"/>
+ *         &lt;element name="dadosValidarUsuario" type="{http://isoccer.com.br/servicos/UsuarioService}validarUsuarioDTO"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "inValidarUsuario", propOrder = {
-    "dados"
+    "dadosValidarUsuario"
 })
 public class InValidarUsuario {
 
     @XmlElement(required = true)
-    protected BuscarUsuarioDTO dados;
+    protected ValidarUsuarioDTO dadosValidarUsuario;
 
     /**
-     * Obtém o valor da propriedade dados.
+     * Obtém o valor da propriedade dadosValidarUsuario.
      * 
      * @return
      *     possible object is
-     *     {@link BuscarUsuarioDTO }
+     *     {@link ValidarUsuarioDTO }
      *     
      */
-    public BuscarUsuarioDTO getDados() {
-        return dados;
+    public ValidarUsuarioDTO getDadosValidarUsuario() {
+        return dadosValidarUsuario;
     }
 
     /**
-     * Define o valor da propriedade dados.
+     * Define o valor da propriedade dadosValidarUsuario.
      * 
      * @param value
      *     allowed object is
-     *     {@link BuscarUsuarioDTO }
+     *     {@link ValidarUsuarioDTO }
      *     
      */
-    public void setDados(BuscarUsuarioDTO value) {
-        this.dados = value;
+    public void setDadosValidarUsuario(ValidarUsuarioDTO value) {
+        this.dadosValidarUsuario = value;
     }
 
 }

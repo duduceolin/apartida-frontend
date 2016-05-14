@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:decorate template="/padrao/padrao.xhtml">
+	<ui:define name="menu">
+		<h:form>
+			<p:menu style="width: 200px">
+				<p:submenu label="Menu">
+					<p:menuitem value="Votar" icon="ui-icon-key" url="/restrito/Dashboard.jsf"
+						style="background-color:#2ECCFA" />
+					<p:menuitem value="Resultado parcial" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+					<p:menuitem value="Ultimas votações" icon="ui-icon-key" url="/restrito/Total.jsf"/>
+				</p:submenu>
+			</p:menu>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="centro">
+
+		asdasdasdasdasd
+	</ui:define>
+</ui:decorate>
+</html>

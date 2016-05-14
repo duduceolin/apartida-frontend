@@ -1,5 +1,5 @@
 
-package br.com.isports.clientews.usuarioservice;
+package br.com.isoccer.servicos.usuarioservice;
 
 import java.net.MalformedURLException;
 import java.net.URL;

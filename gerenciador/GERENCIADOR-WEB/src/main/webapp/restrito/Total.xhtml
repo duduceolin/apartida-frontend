@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:decorate template="/padrao/padrao.xhtml">
+	<ui:define name="menu">
+		<h:form>
+			<p:menu style="width: 200px">
+				<p:submenu label="Menu">
+					<p:menuitem value="Votar" icon="ui-icon-key" url="/restrito/Dashboard.jsf"/>
+					<p:menuitem value="Resultado parcial" icon="ui-icon-key" url="/restrito/Parcial.jsf" />
+					<p:menuitem value="Ultimas votações" icon="ui-icon-key" url="/restrito/Total.jsf"
+					style="background-color:#2ECCFA"/>
+				</p:submenu>
+			</p:menu>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="centro">
+		<br/>
+			<h:outputText value="#{totalController.mensagemBemVindo}" />
+			<br />
+			<br />
+
+			<p:dataTable var="voto"
+				value="#{totalController.lista}" rendered="#{totalController.lista.isEmpty() eq false}">
+				<p:column headerText="Restaurante">
+					<h:outputText value="#{voto.restaurante.nome}" />
+				</p:column>
+				<p:column headerText="Numero de votos">
+					<h:outputText value="#{voto.cont.toString()}" />
+				</p:column>
+				<p:column headerText="Data">
+					<h:outputText value="#{voto.data}" />
+				</p:column>
+			</p:dataTable>
+		
+	</ui:define>
+</ui:decorate>
+</html>

@@ -6,8 +6,8 @@
 package br.com.isports.acesso.locate;
 
 import br.com.isports.acesso.utils.CacheLocate;
-import br.com.isports.clientews.usuarioservice.UsuarioService;
-import br.com.isports.clientews.usuarioservice.UsuarioService_Service;
+import br.com.isoccer.servicos.usuarioservice.UsuarioService;
+import br.com.isoccer.servicos.usuarioservice.UsuarioService_Service;
 
 /**
  *

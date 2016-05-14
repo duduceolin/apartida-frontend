@@ -42,7 +42,7 @@
                             <wsdlFiles>
                                 <wsdlFile>localhost_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName>br.com.isports.clientews.usuarioservice</packageName>
+                            <packageName></packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>

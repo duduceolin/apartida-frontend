@@ -1,5 +1,5 @@
 
-package br.com.isports.clientews.usuarioservice;
+package br.com.isoccer.servicos.usuarioservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de buscarUsuarioDTO complex type.
+ * <p>Classe Java de validarUsuarioDTO complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="buscarUsuarioDTO">
+ * &lt;complexType name="validarUsuarioDTO">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "buscarUsuarioDTO", propOrder = {
+@XmlType(name = "validarUsuarioDTO", propOrder = {
     "login",
     "senha"
 })
-public class BuscarUsuarioDTO {
+public class ValidarUsuarioDTO {
 
     @XmlElement(required = true)
     protected String login;
