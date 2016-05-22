@@ -2,26 +2,48 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
-    <ui:decorate template="/padrao/padrao.xhtml">
 
-        <ui:define name="centro">
-            <h:form id="formLogin" enctype="multipart/form-data">
-                <p:growl autoUpdate="true" id="messages" />
-                
-                <p:panelGrid styleClass="semBorda" columns="2">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>aPartida.com.br - Gerenciador</title>
+        <style type="text/css">
+            body {background-color: #eeeeee; font-size: 12px}
+        </style>
+    </h:head>
+    <h:body>
 
-                    <h:outputText value="Login: " />
-                    <p:inputText value="#{loginController.usuario.login}" size="37" />
+        <div align="center">
+            <p:layout style="min-width:820px;max-width:20px;min-height:400px">  
+                <p:layoutUnit position="north" size="160">  
+                    <h:graphicImage url="/padrao/images/logo-apartida.png" />
+                </p:layoutUnit>  
+                <p:layoutUnit position="center">  
+                    <h:form id="formLogin" enctype="multipart/form-data">
+                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
 
-                    <h:outputText value="Senha: " />
-                    <p:password value="#{loginController.usuario.senha}" size="37" />
+                        <p:panelGrid styleClass="semBorda" columns="2" style=" margin: 0 auto;">
 
-                </p:panelGrid>
+                            <h:outputText value="Login: " />
+                            <p:inputText value="#{loginController.usuario.login}" size="37" />
 
-                <p:commandButton value="Logar" action="#{loginController.logar()}" />
-            </h:form>
-        </ui:define>
-    </ui:decorate>
+                            <h:outputText value="Senha: " />
+                            <p:password value="#{loginController.usuario.senha}" size="37" />
+
+                            <p:column style="border:none"></p:column>
+                            <p:column style="float:right;">
+
+                                <p:commandButton value="Limpar campos" type="reset" style="float:right;"/>
+                                <p:commandButton value="Logar" action="#{loginController.logar()}" style="float:right;margin-right:7px"/>
+                            </p:column>
+
+                        </p:panelGrid>
+                    </h:form>
+                </p:layoutUnit>
+            </p:layout>
+
+        </div>
+    </h:body>
 </html>

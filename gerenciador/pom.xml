@@ -8,9 +8,19 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-  <modules>
-    <module>GERENCIADOR-WEB</module>
-    <module>ISPO-CLIENTEWS</module>
-    <module>GERENCIADOR-ACESSO</module>
-  </modules>
+    <modules>
+        <module>GERENCIADOR-WEB</module>
+        <module>ISPO-CLIENTEWS</module>
+        <module>GERENCIADOR-ACESSO</module>
+    </modules>
+  
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.6.4</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

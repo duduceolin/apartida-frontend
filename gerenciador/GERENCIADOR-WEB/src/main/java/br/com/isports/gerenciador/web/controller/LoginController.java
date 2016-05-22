@@ -5,14 +5,14 @@
  */
 package br.com.isports.gerenciador.web.controller;
 
+import br.com.isports.gerenciador.web.util.FacesUtils;
 import br.com.isoccer.servicos.usuarioservice.BuscarUsuarioDTO;
 import br.com.isoccer.servicos.usuarioservice.InBuscarUsuario;
-import br.com.isoccer.servicos.usuarioservice.InValidarUsuario;
 import br.com.isoccer.servicos.usuarioservice.IspoException_Exception;
 import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
-import br.com.isoccer.servicos.usuarioservice.ValidarUsuarioDTO;
 import br.com.isports.acesso.acesso.UsuarioServiceAcesso;
 import br.com.isports.gerenciador.web.util.SessionContext;
+import br.com.isports.gerenciador.web.util.TipoErro;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -42,6 +42,9 @@ public class LoginController extends BaseController {
             return "/restrito/Dashboard.jsf?faces-redirect=true";
         } catch (IspoException_Exception e) {
             mostrarMensagemErro(e.getMessage());
+        } catch (Exception e) {
+            mostrarMensagemErro(TipoErro.COMUNICACAO.getMensagem());
+            logger.error(e.getLocalizedMessage());
         }
 
         return "";
