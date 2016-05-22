@@ -1,26 +1,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:decorate template="/padrao/padrao.xhtml">
-	<ui:define name="menu">
-		<h:form>
-			<p:menu style="width: 200px">
-				<p:submenu label="Menu">
-					<p:menuitem value="Votar" icon="ui-icon-key" url="/restrito/Dashboard.jsf"
-						style="background-color:#2ECCFA" />
-					<p:menuitem value="Resultado parcial" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
-					<p:menuitem value="Ultimas votações" icon="ui-icon-key" url="/restrito/Total.jsf"/>
-				</p:submenu>
-			</p:menu>
-		</h:form>
-	</ui:define>
+    <ui:decorate template="/padrao/padrao.xhtml">
+        <ui:define name="menu">
+            <h:form>
+                <p:menu toggleable="true" style="width: 200px" >
+                    <p:submenu label="Dashboard">
+                        <p:menuitem value="Pesquisar horários" icon="ui-icon-key" url="/restrito/Dashboard.jsf" 
+                                    style="background-color:#2ECCFA" />
+                        <p:menuitem value="Marcar horário" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                        <p:menuitem value="Anúnciar horário promocional" icon="ui-icon-key" url="/restrito/Total.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Gerenciar quadras" expanded="#{false}">
+                        <p:menuitem value="Listar quadras" icon="ui-icon-key" url="/restrito/Dashboard.jsf"/>
+                        <p:menuitem value="Cadastrar quadra" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Gerenciar horários" expanded="#{false}">
+                        <p:menuitem value="Listar horários" icon="ui-icon-key" url="/restrito/Dashboard.jsf" />
+                        <p:menuitem value="Cadastrar horário" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Gerenciar padrões" expanded="#{false}">
+                        <p:menuitem value="Listar padrões" icon="ui-icon-key" url="/restrito/Dashboard.jsf" />
+                        <p:menuitem value="Cadastrar padrão" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Relatórios" expanded="#{false}">
+                        <p:menuitem value="Relatório de lucros" icon="ui-icon-key" url="/restrito/Dashboard.jsf" />
+                        <p:menuitem value="Relatório de anúncios" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                        <p:menuitem value="Relatório de horários" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                        <p:menuitem value="Relatório de buscas" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Utilitários" expanded="#{false}">
+                        <p:menuitem value="Validador de voucher" icon="ui-icon-key" url="/restrito/Dashboard.jsf" />
+                        <p:menuitem value="Simulador de buscas" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Gerenciar funcionários" expanded="#{false}">
+                        <p:menuitem value="Listar funcionários" icon="ui-icon-key" url="/restrito/Dashboard.jsf" />
+                        <p:menuitem value="Cadastrar funcionário" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                    <p:submenu label="Gerenciar perfis" expanded="false">
+                        <p:menuitem value="Listar perfis" icon="ui-icon-key" url="/restrito/Dashboard.jsf" />
+                        <p:menuitem value="Cadastrar perfil" icon="ui-icon-key" url="/restrito/Parcial.jsf"/>
+                    </p:submenu>
+                </p:menu>
 
-	<ui:define name="centro">
+            </h:form>
+        </ui:define>
 
-		asdasdasdasdasd
-	</ui:define>
-</ui:decorate>
+        <ui:define name="centro">
+
+            asdasdasdasdasd
+        </ui:define>
+    </ui:decorate>
 </html>

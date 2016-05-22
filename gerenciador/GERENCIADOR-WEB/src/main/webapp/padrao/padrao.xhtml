@@ -6,7 +6,7 @@
  
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>DBServer - Eduardo Ceolin</title>
+        <title>aPartida.com.br - Gerenciador</title>
         <style type="text/css">
             body {background-color: #eeeeee; font-size: 12px}
         </style> 
@@ -14,25 +14,16 @@
     <h:body>
         <div align="center">
             <p:layout style="min-width:1020px;max-width:20px;min-height:800px">  
-                <p:layoutUnit position="north" size="100">  
-                    <h:graphicImage url="/padrao/images/logo-dbserver.png" />
+                <p:layoutUnit position="north" size="160">  
+                    <h:graphicImage url="/padrao/images/logo-apartida.png" />
                 </p:layoutUnit>  
  
                 <p:layoutUnit position="west" size="220">  
-                    <ui:insert name="menu">
-                        <h:form>
-                            <p:menu style="width: 200px">
-                                <p:submenu label="Menu">
-                                    <p:menuitem value="Login" icon="ui-icon-key" />
-                               </p:submenu>
-                            </p:menu>
-                        </h:form>
-                    </ui:insert>
+                    <ui:insert name="menu"/>
                 </p:layoutUnit>  
                 <p:layoutUnit position="center">  
-                    <ui:insert name="centro">
-                       
-                    </ui:insert>
+                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                    <ui:insert name="centro"/>
                 </p:layoutUnit>  
             </p:layout>  
         </div>

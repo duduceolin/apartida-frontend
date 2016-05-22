@@ -15,7 +15,6 @@ import br.com.isports.acesso.acesso.UsuarioServiceAcesso;
 import br.com.isports.gerenciador.web.util.SessionContext;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 /**
  *
@@ -23,7 +22,7 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean(name = "loginController")
 @SessionScoped
-public class LoginController {
+public class LoginController extends BaseController {
 
     private UsuarioDTO usuario;
 
@@ -35,46 +34,17 @@ public class LoginController {
     }
 
     public String logar() {
+
         try {
-            System.out.println("Tentando logar com usuário " + usuario.getLogin());
+            UsuarioDTO logado = acesso.buscarUsuario(gerarInBuscarUsuario(usuario)).getUsuario();
+            SessionContext.getInstance().setAttribute("usuarioLogado", logado);
 
-            Boolean usuarioValido = Boolean.FALSE;
-
-            try {
-                usuarioValido = acesso.validarUsuario(gerarInValidarUsuario(usuario)).isUsuarioValido();
-            } catch (IspoException_Exception e) {
-                //mozovo
-            }
-
-            if (!usuarioValido) {
-                System.out.println("Login ou Senha errado, tente novamente !");
-                FacesContext.getCurrentInstance().validationFailed();
-                return "";
-            } else {
-                System.out.println("Usuário logado com sucesso");
-                try {
-                    UsuarioDTO logado = acesso.buscarUsuario(gerarInBuscarUsuario(usuario)).getUsuario();
-                    SessionContext.getInstance().setAttribute("usuarioLogado", logado);
-                } catch (IspoException_Exception e) {
-                    //mozovo
-                }
-            }
             return "/restrito/Dashboard.jsf?faces-redirect=true";
-        } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
-            FacesContext.getCurrentInstance().validationFailed();
-            e.printStackTrace();
-            return "";
+        } catch (IspoException_Exception e) {
+            mostrarMensagemErro(e.getMessage());
         }
 
-    }
-
-    private static InValidarUsuario gerarInValidarUsuario(UsuarioDTO usuario) {
-        InValidarUsuario inValidar = new InValidarUsuario();
-        inValidar.setDadosValidarUsuario(new ValidarUsuarioDTO());
-        inValidar.getDadosValidarUsuario().setLogin(usuario.getLogin());
-        inValidar.getDadosValidarUsuario().setSenha(usuario.getSenha());
-        return inValidar;
+        return "";
     }
 
     private static InBuscarUsuario gerarInBuscarUsuario(UsuarioDTO usuario) {

@@ -5,19 +5,11 @@
       xmlns:f="http://java.sun.com/jsf/core">
 
     <ui:decorate template="/padrao/padrao.xhtml">
-        <ui:define name="menu">
-            <h:form>
-                <p:menu style="width: 200px">
-                    <p:submenu label="Menu">
-                        <p:menuitem value="Login" icon="ui-icon-key" />
-                    </p:submenu>
-                </p:menu>
-            </h:form>
-        </ui:define>
 
         <ui:define name="centro">
             <h:form id="formLogin" enctype="multipart/form-data">
                 <p:growl autoUpdate="true" id="messages" />
+                
                 <p:panelGrid styleClass="semBorda" columns="2">
 
                     <h:outputText value="Login: " />
