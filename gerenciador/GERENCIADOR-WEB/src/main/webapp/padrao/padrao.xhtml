@@ -8,19 +8,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>aPartida.com.br - Gerenciador</title>
         <style type="text/css">
-            body {background-color: #eeeeee; font-size: 12px}
+            body {background-color: #eeeeee; font-size: 12px; overflow-x: visible; align-content: center}
         </style> 
     </h:head>
     <h:body>
-        <div align="center">
-            <p:layout style="min-width:820px;max-width:20px;min-height:800px">  
+
+            <p:layout style="min-width:1020px;overflow-x:visible" >
                 <p:layoutUnit position="north" size="160">  
                     <h:graphicImage url="/padrao/images/logo-apartida.png" />
+                    <h:outputText value="#{usuarioLogadoController.usuarioLogado.nome}" style="float: right"/>
                 </p:layoutUnit>  
 
-                <p:layoutUnit position="west" size="220">  
+                <p:layoutUnit position="west" size="240">  
                     <h:form>
-                        <p:menu toggleable="true"  style="width: 200px" >
+                        <p:menu toggleable="true"  style="width: 220px" >
                             <p:submenu id="dashBoard" label="Dashboard" expanded="true">
                                 <p:menuitem value="Pesquisar horários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" 
                                             style="background-color:#2ECCFA" />
@@ -65,7 +66,6 @@
                     <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
                     <ui:insert name="centro"/>
                 </p:layoutUnit>  
-            </p:layout>  
-        </div>
+        </p:layout>  
     </h:body>
 </html>

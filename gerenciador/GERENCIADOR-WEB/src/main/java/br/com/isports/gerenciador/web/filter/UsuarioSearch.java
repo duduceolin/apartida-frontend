@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.isports.gerenciador.mock.dtos;
+package br.com.isports.gerenciador.web.filter;
 
 import java.io.Serializable;
 
@@ -11,22 +11,12 @@ import java.io.Serializable;
  *
  * @author dudu
  */
-public class UsuarioDTO implements Serializable {
+public class UsuarioSearch implements Serializable {
 
-    private static final long serialVersionUID = -441037998257935175L;
+    private static final long serialVersionUID = 8321132051778917591L;
 
-    private Integer id;
     private String login;
     private String senha;
-    private String nome;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getLogin() {
         return login;
@@ -42,14 +32,6 @@ public class UsuarioDTO implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
 }

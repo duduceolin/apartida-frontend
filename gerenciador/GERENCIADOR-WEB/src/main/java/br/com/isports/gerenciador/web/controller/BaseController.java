@@ -34,4 +34,6 @@ public abstract class BaseController {
     public static void mostrarMensagemFatal(final String mensagem) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Erro Fatal!", mensagem));
     }
+    
+    public abstract void postConstruct();
 }
