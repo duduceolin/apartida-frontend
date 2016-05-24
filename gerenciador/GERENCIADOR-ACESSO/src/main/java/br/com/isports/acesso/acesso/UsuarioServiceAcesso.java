@@ -7,10 +7,8 @@ package br.com.isports.acesso.acesso;
 
 import br.com.isoccer.servicos.usuarioservice.InBuscarUsuario;
 import br.com.isports.acesso.locate.UsuarioServiceLocate;
-import br.com.isoccer.servicos.usuarioservice.InValidarUsuario;
 import br.com.isoccer.servicos.usuarioservice.IspoException_Exception;
 import br.com.isoccer.servicos.usuarioservice.OutBuscarUsuario;
-import br.com.isoccer.servicos.usuarioservice.OutValidarUsuario;
 import br.com.isoccer.servicos.usuarioservice.UsuarioService;
 import java.io.Serializable;
 
@@ -32,10 +30,6 @@ public class UsuarioServiceAcesso implements Serializable {
         }
     }
 
-    public OutValidarUsuario validarUsuario(InValidarUsuario inValidar) throws IspoException_Exception{
-            return servico.validarUsuario(inValidar);
-    }
- 
     public OutBuscarUsuario buscarUsuario(InBuscarUsuario inBuscar) throws IspoException_Exception{
         return servico.buscarUsuario(inBuscar);
     }

@@ -33,26 +33,26 @@
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.3</version>
-<!--                <executions>
-                    <execution>
+                <executions>
+<!--                    <execution>
                         <goals>
                             <goal>wsimport</goal>
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl</wsdlFile>
+                                <wsdlFile>74.63.218.158_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://localhost:8080/ISPO-EJB/UsuarioService/UsuarioService?WSDL</wsdlLocation>
+                            <wsdlLocation>http://74.63.218.158:8080/ISPO-EJB/UsuarioService/UsuarioService?WSDL</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/UsuarioService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-UsuarioService</id>
                         <phase>generate-sources</phase>
-                    </execution>
-                </executions>-->
+                    </execution>-->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>javax.xml</groupId>
