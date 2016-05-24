@@ -9,63 +9,72 @@
         <title>aPartida.com.br - Gerenciador</title>
         <style type="text/css">
             body {background-color: #eeeeee; font-size: 12px; overflow-x: visible; align-content: center}
+            .preformatted {
+                white-space: pre-wrap;
+            }
         </style> 
     </h:head>
     <h:body>
 
-            <p:layout style="min-width:1020px;overflow-x:visible" >
-                <p:layoutUnit position="north" size="160">  
-                    <h:graphicImage url="/padrao/images/logo-apartida.png" />
-                    <h:outputText value="#{usuarioLogadoController.usuarioLogado.nome}" style="float: right"/>
-                </p:layoutUnit>  
+        <p:layout style="min-width:1020px;overflow-x:visible" >
+            <p:layoutUnit position="north" size="160">  
+                <h:graphicImage url="/padrao/images/logo-apartida.png" />
+                <p:panelGrid styleClass="semBorda" columns="1" style="float: right;">
+                    <p:outputLabel value="NOME: #{usuarioLogadoController.usuarioLogado.nome}" styleClass="preformatted" style="float: right" escape="false"/>
+                    <p:outputLabel value="PERFIL DE ACESSO: #{usuarioLogadoController.usuarioLogado.perfil.nome}" styleClass="preformatted" style="float: right" escape="false"/>
+                    <p:outputLabel value="EMPRESA: #{usuarioLogadoController.usuarioLogado.perfil.empresa.nome}" styleClass="preformatted" style="float: right" escape="false"/>
+                    <p:outputLabel value="PLANO: #{usuarioLogadoController.usuarioLogado.perfil.empresa.plano.nome}" styleClass="preformatted" style="float: right" escape="false"/>
+                    <p:outputLabel value="CNPJ: #{usuarioLogadoController.usuarioLogado.perfil.empresa.cnpj}" styleClass="preformatted" style="float: right" escape="false"/>
+                </p:panelGrid>
+            </p:layoutUnit>  
 
-                <p:layoutUnit position="west" size="240">  
-                    <h:form>
-                        <p:menu toggleable="true"  style="width: 220px" >
-                            <p:submenu id="dashBoard" label="Dashboard" expanded="true">
-                                <p:menuitem value="Pesquisar horários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" 
-                                            style="background-color:#2ECCFA" />
-                                <p:menuitem value="Marcar horário" icon="ui-icon-plus" url="/restrito/Parcial.jsf"/>
-                                <p:menuitem value="Anúnciar horário promocional" icon="ui-icon-plus" url="/restrito/Total.jsf"/>
-                            </p:submenu>
-                            <p:submenu id="gerenciarQuadras" label="Gerenciar quadras" expanded="false">
-                                <p:menuitem value="Listar quadras" icon="ui-icon-search" url="/restrito/Dashboard.jsf"/>
-                                <p:menuitem value="Cadastrar quadra" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                            <p:submenu label="Gerenciar horários" expanded="false">
-                                <p:menuitem value="Listar horários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
-                                <p:menuitem value="Cadastrar horário" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                            <p:submenu label="Gerenciar padrões" expanded="false">
-                                <p:menuitem value="Listar padrões" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
-                                <p:menuitem value="Cadastrar padrão" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                            <p:submenu label="Relatórios" expanded="false">
-                                <p:menuitem value="Relatório de lucros" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
-                                <p:menuitem value="Relatório de anúncios" icon="ui-icon-search" url="/restrito/Parcial.jsf"/>
-                                <p:menuitem value="Relatório de horários" icon="ui-icon-search" url="/restrito/Parcial.jsf"/>
-                                <p:menuitem value="Relatório de buscas" icon="ui-icon-search" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                            <p:submenu label="Utilitários" expanded="false">
-                                <p:menuitem value="Validador de voucher" icon="ui-icon-gear" url="/restrito/Dashboard.jsf" />
-                                <p:menuitem value="Simulador de buscas" icon="ui-icon-gear" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                            <p:submenu label="Gerenciar funcionários" expanded="false">
-                                <p:menuitem value="Listar funcionários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
-                                <p:menuitem value="Cadastrar funcionário" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                            <p:submenu label="Gerenciar perfis" expanded="false">
-                                <p:menuitem value="Listar perfis" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
-                                <p:menuitem value="Cadastrar perfil" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
-                            </p:submenu>
-                        </p:menu>
+            <p:layoutUnit position="west" size="240">  
+                <h:form>
+                    <p:menu toggleable="true"  style="width: 220px" >
+                        <p:submenu id="dashBoard" label="Dashboard" expanded="true">
+                            <p:menuitem value="Pesquisar horários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" 
+                                        style="background-color:#2ECCFA" />
+                            <p:menuitem value="Marcar horário" icon="ui-icon-plus" url="/restrito/Parcial.jsf"/>
+                            <p:menuitem value="Anúnciar horário promocional" icon="ui-icon-plus" url="/restrito/Total.jsf"/>
+                        </p:submenu>
+                        <p:submenu id="gerenciarQuadras" label="Gerenciar quadras" expanded="false">
+                            <p:menuitem value="Listar quadras" icon="ui-icon-search" url="/restrito/Dashboard.jsf"/>
+                            <p:menuitem value="Cadastrar quadra" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                        <p:submenu label="Gerenciar horários" expanded="false">
+                            <p:menuitem value="Listar horários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
+                            <p:menuitem value="Cadastrar horário" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                        <p:submenu label="Gerenciar padrões" expanded="false">
+                            <p:menuitem value="Listar padrões" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
+                            <p:menuitem value="Cadastrar padrão" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                        <p:submenu label="Relatórios" expanded="false">
+                            <p:menuitem value="Relatório de lucros" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
+                            <p:menuitem value="Relatório de anúncios" icon="ui-icon-search" url="/restrito/Parcial.jsf"/>
+                            <p:menuitem value="Relatório de horários" icon="ui-icon-search" url="/restrito/Parcial.jsf"/>
+                            <p:menuitem value="Relatório de buscas" icon="ui-icon-search" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                        <p:submenu label="Utilitários" expanded="false">
+                            <p:menuitem value="Validador de voucher" icon="ui-icon-gear" url="/restrito/Dashboard.jsf" />
+                            <p:menuitem value="Simulador de buscas" icon="ui-icon-gear" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                        <p:submenu label="Gerenciar funcionários" expanded="false">
+                            <p:menuitem value="Listar funcionários" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
+                            <p:menuitem value="Cadastrar funcionário" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                        <p:submenu label="Gerenciar perfis" expanded="false">
+                            <p:menuitem value="Listar perfis" icon="ui-icon-search" url="/restrito/Dashboard.jsf" />
+                            <p:menuitem value="Cadastrar perfil" icon="ui-icon-disk" url="/restrito/Parcial.jsf"/>
+                        </p:submenu>
+                    </p:menu>
 
-                    </h:form>
-                </p:layoutUnit>  
-                <p:layoutUnit position="center">  
-                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
-                    <ui:insert name="centro"/>
-                </p:layoutUnit>  
+                </h:form>
+            </p:layoutUnit>  
+            <p:layoutUnit position="center">  
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                <ui:insert name="centro"/>
+            </p:layoutUnit>  
         </p:layout>  
     </h:body>
 </html>
