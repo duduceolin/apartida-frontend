@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.isports.acesso.acesso;
+package br.com.apartida.acesso.acesso;
 
 import br.com.isoccer.servicos.usuarioservice.InBuscarUsuario;
-import br.com.isports.acesso.locate.UsuarioServiceLocate;
+import br.com.apartida.acesso.locate.UsuarioServiceLocate;
 import br.com.isoccer.servicos.usuarioservice.IspoException_Exception;
 import br.com.isoccer.servicos.usuarioservice.OutBuscarUsuario;
 import br.com.isoccer.servicos.usuarioservice.UsuarioService;
