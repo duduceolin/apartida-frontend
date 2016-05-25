@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.isports.gerenciador.web.util;
+package br.com.apartida.gerenciador.web.util;
 
 import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
 import javax.faces.context.ExternalContext;

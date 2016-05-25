@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         version="2.5">
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <display-name>Almoco</display-name>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
@@ -18,7 +15,7 @@
     </welcome-file-list>
     <filter>
         <filter-name>LoginFilter</filter-name>
-        <filter-class>br.com.isports.gerenciador.web.util.LoginFilter</filter-class>
+        <filter-class>br.com.apartida.gerenciador.web.util.LoginFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
@@ -27,10 +24,8 @@
     <session-config>
         <session-timeout>60</session-timeout>
     </session-config>
-        
-    <context-param>  
-        <param-name>primefaces.THEME</param-name>  
-        <param-value>ronin</param-value>  
-    </context-param>  
-
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>ronin</param-value>
+    </context-param>
 </web-app>

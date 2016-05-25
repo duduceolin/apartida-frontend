@@ -1,4 +1,4 @@
-package br.com.isports.gerenciador.web.util;
+package br.com.apartida.gerenciador.web.util;
 
 import java.io.Serializable;
 import java.util.Locale;

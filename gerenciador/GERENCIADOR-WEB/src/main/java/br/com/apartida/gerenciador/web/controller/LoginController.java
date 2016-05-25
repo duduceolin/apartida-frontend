@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.isports.gerenciador.web.controller;
+package br.com.apartida.gerenciador.web.controller;
 
 import br.com.isoccer.servicos.usuarioservice.BuscarUsuarioDTO;
 import br.com.isoccer.servicos.usuarioservice.InBuscarUsuario;
 import br.com.isoccer.servicos.usuarioservice.IspoException_Exception;
 import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
-import br.com.isports.acesso.acesso.UsuarioServiceAcesso;
-import br.com.isports.gerenciador.web.filter.UsuarioSearch;
-import br.com.isports.gerenciador.web.util.SessionContext;
-import br.com.isports.gerenciador.web.util.TipoErro;
+import br.com.apartida.acesso.acesso.UsuarioServiceAcesso;
+import br.com.apartida.gerenciador.web.filter.UsuarioSearch;
+import br.com.apartida.gerenciador.web.util.SessionContext;
+import br.com.apartida.gerenciador.web.util.TipoErro;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

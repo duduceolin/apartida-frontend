@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.isports.gerenciador.web.filter;
+package br.com.apartida.gerenciador.web.filter;
 
 import java.io.Serializable;
 
