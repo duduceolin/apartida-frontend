@@ -1,49 +1,57 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>aPartida.com.br - Gerenciador</title>
-        <style type="text/css">
-            body {background-color: #eeeeee; font-size: 12px}
-        </style>
-
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>Gerenciador aPartida</title>
+        <ui:insert name="head" />
     </h:head>
-    <h:body>
-        <div align="center">
 
-            <p:layout style="min-width:1020px;max-width:20px;min-height:800px">  
-                <p:layoutUnit position="north" size="160">  
-                    <h:graphicImage url="/padrao/images/logo-apartida.png" />
-                </p:layoutUnit>  
-                <p:layoutUnit position="center">  
-                    <h:form id="formLogin" enctype="multipart/form-data">
-                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+    <h:body styleClass="loginbody">
 
-                        <p:panelGrid styleClass="semBorda" columns="2" style=" margin: 0 auto;">
-
-                            <h:outputText value="Login: " />
-                            <p:inputText value="#{loginController.usuario.login}" size="37" />
-
-                            <h:outputText value="Senha: " />
-                            <p:password value="#{loginController.usuario.senha}" size="37" />
-
-                            <p:column style="border:none"></p:column>
-                            <p:column style="float:right;">
-
-                                <p:commandButton value="Limpar campos" type="reset" style="float:right;"/>
-                                <p:commandButton value="Logar" action="#{loginController.logar()}" style="float:right;margin-right:7px"/>
-                            </p:column>
-
-                        </p:panelGrid>
+        <div class="Wid25 MarAuto DispBlock OvHidden Responsive100">
+            <div class="ContainerIndent">
+                <div class="Wid90 MarAuto">
+                    <div class="Wid100 TexAlCenter">
+                        <h:graphicImage name="images/logo-apartida.png" library="apartida" style="width:400px; margin-bottom:-30px; margin-left:-57px;"/>
+                        <div class="EmptyBox30"></div>
+                    </div>
+                    <h:form>
+                        <div class="ShadowBox whiteback TexAlCenter RedBorderedBox BordRad15">
+                            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                            <div class="EmptyBox20"></div>
+                            <div class="Wid100 OvHidden BigTopic FontDosisSemiBold Fs30"><i class="fa fa-key"></i> Gerenciador</div>
+                            <div class="EmptyBox20"></div>
+                            <div class="Wid100"><p:inputText placeholder="Login"  value="#{loginController.usuarioSearch.login}" styleClass="Wid80 TexAlCenter Fs18"/></div>
+                            <div class="EmptyBox10"></div>
+                            <div class="Wid100"><p:inputText type="password" placeholder="Senha" value="#{loginController.usuarioSearch.senha}" styleClass="Wid80 TexAlCenter Fs18"/></div>
+                            <div class="EmptyBox30"></div>
+                            <div class="Wid100"><p:commandButton value="Acessar" icon="fa fa-sign-in Fs18 white" styleClass="Wid70" action="#{loginController.logar()}"/></div>
+                            <div class="EmptyBox5"></div>
+                            <div class="Wid100"><p:button value="Esqueceu a senha?" icon="fa fa-lock Fs18 white" styleClass="RedButton Wid70"/></div>
+                            <div class="EmptyBox30"></div>
+                        </div>
                     </h:form>
-                </p:layoutUnit>
-            </p:layout>
+                    <div class="Wid100 TexAlCenter MarTop20 softgray Fs14 FontDosisRegular">
+                        <i class="fa fa-copyright"></i>  apartida.com.br - 2016 <br/> All rights reserved.
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <h:outputStylesheet name="css/core-layout.css" library="ronin-layout" />
+        <h:outputStylesheet name="css/font-awesome.css" library="ronin-layout" />
+        <h:outputStylesheet name="css/animate.css" library="ronin-layout" />
+        <h:outputStylesheet name="css/ronin-layout.css" library="ronin-layout" />
     </h:body>
+
 </html>

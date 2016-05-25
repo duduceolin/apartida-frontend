@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-	<display-name>Almoco</display-name>
-	<servlet>
-		<servlet-name>Faces Servlet</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.jsf</url-pattern>
-	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>Inicio.jsf</welcome-file>
-	</welcome-file-list>
-	<filter>
-		<filter-name>LoginFilter</filter-name>
-		<filter-class>br.com.isports.gerenciador.web.util.LoginFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>LoginFilter</filter-name>
-		<url-pattern>/restrito/*</url-pattern>
-	</filter-mapping>
-	<session-config>
-		<session-timeout>60</session-timeout>
-	</session-config>
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <display-name>Almoco</display-name>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>Inicio.jsf</welcome-file>
+    </welcome-file-list>
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>br.com.isports.gerenciador.web.util.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/restrito/*</url-pattern>
+    </filter-mapping>
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+        
+    <context-param>  
+        <param-name>primefaces.THEME</param-name>  
+        <param-value>ronin</param-value>  
+    </context-param>  
 
 </web-app>

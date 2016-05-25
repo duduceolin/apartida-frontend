@@ -5,12 +5,12 @@
  */
 package br.com.isports.gerenciador.web.controller;
 
-import br.com.isports.gerenciador.web.util.FacesUtils;
 import br.com.isoccer.servicos.usuarioservice.BuscarUsuarioDTO;
 import br.com.isoccer.servicos.usuarioservice.InBuscarUsuario;
 import br.com.isoccer.servicos.usuarioservice.IspoException_Exception;
 import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
 import br.com.isports.acesso.acesso.UsuarioServiceAcesso;
+import br.com.isports.gerenciador.web.filter.UsuarioSearch;
 import br.com.isports.gerenciador.web.util.SessionContext;
 import br.com.isports.gerenciador.web.util.TipoErro;
 import javax.annotation.PostConstruct;
@@ -25,21 +25,21 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class LoginController extends BaseController {
 
-    private UsuarioDTO usuario;
+    private UsuarioSearch usuarioSearch;
 
     private UsuarioServiceAcesso acesso;
 
     @PostConstruct
     @Override
     public void postConstruct() {
-        usuario = new UsuarioDTO();
+        usuarioSearch = new UsuarioSearch();
         acesso = new UsuarioServiceAcesso();
     }
 
     public String logar() {
 
         try {
-            UsuarioDTO logado = acesso.buscarUsuario(gerarInBuscarUsuario(usuario)).getUsuario();
+            UsuarioDTO logado = acesso.buscarUsuario(gerarInBuscarUsuario(usuarioSearch)).getUsuario();
             SessionContext.getInstance().setAttribute("usuarioLogado", logado);
 
             return "/restrito/Dashboard.jsf?faces-redirect=true";
@@ -53,7 +53,7 @@ public class LoginController extends BaseController {
         return "";
     }
 
-    private static InBuscarUsuario gerarInBuscarUsuario(UsuarioDTO usuario) {
+    private static InBuscarUsuario gerarInBuscarUsuario(UsuarioSearch usuario) {
         InBuscarUsuario inBuscarUsuario = new InBuscarUsuario();
         inBuscarUsuario.setDadosBuscarUsuario(new BuscarUsuarioDTO());
         inBuscarUsuario.getDadosBuscarUsuario().setLogin(usuario.getLogin());
@@ -61,12 +61,12 @@ public class LoginController extends BaseController {
         return inBuscarUsuario;
     }
 
-    public UsuarioDTO getUsuario() {
-        return usuario;
+    public UsuarioSearch getUsuarioSearch() {
+        return usuarioSearch;
     }
 
-    public void setUsuario(UsuarioDTO usuario) {
-        this.usuario = usuario;
+    public void setUsuarioSearch(UsuarioSearch usuarioSearch) {
+        this.usuarioSearch = usuarioSearch;
     }
 
 }
