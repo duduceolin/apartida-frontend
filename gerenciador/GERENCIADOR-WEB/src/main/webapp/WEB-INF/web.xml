@@ -1,29 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <display-name>Almoco</display-name>
+    <display-name>GERENCIADOR</display-name>
+    
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>Inicio.jsf</welcome-file>
     </welcome-file-list>
+    
     <filter>
         <filter-name>LoginFilter</filter-name>
         <filter-class>br.com.apartida.gerenciador.web.util.LoginFilter</filter-class>
     </filter>
+    
+    <filter>
+        <filter-name>compressionFilter</filter-name>
+        <filter-class>com.googlecode.webutilities.filters.CompressionFilter</filter-class>
+        
+        <init-param>
+            <param-name>compressionThreshold</param-name>
+            <param-value>1</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>decompressMaxBytesPerSecond</param-name>
+            <param-value>100428800</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>maxDecompressedRequestSizeInBytes</param-name>
+            <param-value>4294967295</param-value>
+        </init-param>
+    </filter>
+             
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
         <url-pattern>/restrito/*</url-pattern>
     </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>compressionFilter</filter-name>
+        <url-pattern>*</url-pattern>
+    </filter-mapping>
+    
     <session-config>
         <session-timeout>60</session-timeout>
     </session-config>
+    
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>ronin</param-value>

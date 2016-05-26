@@ -15,14 +15,14 @@ import br.com.apartida.gerenciador.web.util.SessionContext;
 import br.com.apartida.gerenciador.web.util.TipoErro;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author dudu
  */
 @ManagedBean(name = "loginController")
-@SessionScoped
+@ViewScoped
 public class LoginController extends BaseController {
 
     private UsuarioSearch usuarioSearch;

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.apartida.acesso.locate;
+package br.com.isports.acesso.locate;
 
-import br.com.apartida.acesso.utils.CacheLocate;
+import br.com.isports.acesso.utils.CacheLocate;
 import br.com.isoccer.servicos.usuarioservice.UsuarioService;
 import br.com.isoccer.servicos.usuarioservice.UsuarioService_Service;
 

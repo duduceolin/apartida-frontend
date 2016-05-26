@@ -6,7 +6,7 @@
 package br.com.apartida.acesso.acesso;
 
 import br.com.isoccer.servicos.usuarioservice.InBuscarUsuario;
-import br.com.apartida.acesso.locate.UsuarioServiceLocate;
+import br.com.isports.acesso.locate.UsuarioServiceLocate;
 import br.com.isoccer.servicos.usuarioservice.IspoException_Exception;
 import br.com.isoccer.servicos.usuarioservice.OutBuscarUsuario;
 import br.com.isoccer.servicos.usuarioservice.UsuarioService;

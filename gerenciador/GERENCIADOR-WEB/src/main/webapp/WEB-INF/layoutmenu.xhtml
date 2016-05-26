@@ -10,34 +10,34 @@
         <ui:include src="topbar.xhtml" />
         <h:form id="menuform">
             <pr:menu>
-                <p:menuitem id="rm_dashboard" value="Dashboard" icon="fa fa-joomla" outcome="/dashboard"/>
-                <p:menuitem id="rm_promotion" value="Promotion Page" icon="fa fa-joomla" outcome="/promotion-page"/>
+                <p:menuitem id="rm_dashboard" value="Dashboard" icon="fa fa-joomla"/>
+                <p:menuitem id="rm_promotion" value="Promotion Page" icon="fa fa-joomla"/>
                 <p:submenu id="rm_layout" label="Layouts" icon="fa fa-desktop">
-                    <p:menuitem id="rm_dark_layout" value="Dark Layout" icon="fa fa-leaf" actionListener="#{layoutMenuView.change('dark')}" ajax="false" />
-                    <p:menuitem id="rm_light_layout" value="Light Layout" icon="fa fa-leaf" actionListener="#{layoutMenuView.change('light')}" ajax="false" />
+                    <p:menuitem id="rm_dark_layout" value="Dark Layout" icon="fa fa-leaf" ajax="false" />
+                    <p:menuitem id="rm_light_layout" value="Light Layout" icon="fa fa-leaf" ajax="false" />
                 </p:submenu>
                 <p:submenu id="rm_theme" label="Ronin Theme" icon="fa fa-trophy">
                     <p:submenu id="rm_forms" label="Forms" icon="fa fa-folder">
-                        <p:menuitem id="rm_forms_default" value="Default" icon="fa fa-file-text-o" outcome="/forms" />
-                        <p:menuitem id="rm_forms_lesscurve" value="Less Curve" icon="fa fa-file-text-o" outcome="/forms-lesscurve" />
+                        <p:menuitem id="rm_forms_default" value="Default" icon="fa fa-file-text-o" />
+                        <p:menuitem id="rm_forms_lesscurve" value="Less Curve" icon="fa fa-file-text-o"/>
                     </p:submenu>
-                    <p:menuitem id="rm_sample" value="Sample Page" icon="fa fa-columns" outcome="/sample" />
-                    <p:menuitem id="rm_data" value="Data Components" icon="fa fa-calendar-o" outcome="/data" />
-                    <p:menuitem id="rm_datatable" value="DataTable" icon="fa fa-table" outcome="/datatable" />
-                    <p:menuitem id="rm_panels" value="Panels" icon="fa fa-list-alt" outcome="/panel" />
-                    <p:menuitem id="rm_overlays" value="Overlays" icon="fa fa-picture-o" outcome="/overlay" />
-                    <p:menuitem id="rm_menus" value="Menus" icon="fa fa-sitemap" outcome="/menu" />
-                    <p:menuitem id="rm_messages" value="Messages" icon="fa fa-comments" outcome="/messages" />
-                    <p:menuitem id="rm_charts" value="Charts" icon="fa fa-bar-chart" outcome="/charts" />
-                    <p:menuitem id="rm_fileupload" value="FileUpload" icon="fa fa-cloud-upload" outcome="/file" />
-                    <p:menuitem id="rm_misc" value="Misc" icon="fa fa-ge" outcome="/misc" />
+                    <p:menuitem id="rm_sample" value="Sample Page" icon="fa fa-columns" />
+                    <p:menuitem id="rm_data" value="Data Components" icon="fa fa-calendar-o" />
+                    <p:menuitem id="rm_datatable" value="DataTable" icon="fa fa-table" />
+                    <p:menuitem id="rm_panels" value="Panels" icon="fa fa-list-alt" />
+                    <p:menuitem id="rm_overlays" value="Overlays" icon="fa fa-picture-o"/>
+                    <p:menuitem id="rm_menus" value="Menus" icon="fa fa-sitemap" />
+                    <p:menuitem id="rm_messages" value="Messages" icon="fa fa-comments"/>
+                    <p:menuitem id="rm_charts" value="Charts" icon="fa fa-bar-chart" />
+                    <p:menuitem id="rm_fileupload" value="FileUpload" icon="fa fa-cloud-upload" />
+                    <p:menuitem id="rm_misc" value="Misc" icon="fa fa-ge" />
                 </p:submenu>
                 <p:submenu id="rm_default" label="Default Pages" icon="fa fa-newspaper-o">
-                    <p:menuitem id="rm_empty" value="Empty Page" icon="fa fa-plus-circle" outcome="/empty-page" />
-                    <p:menuitem id="rm_login" value="Login Page" icon="fa fa-sign-in" outcome="/login" />
-                    <p:menuitem id="rm_error" value="Error Page" icon="fa fa-close" outcome="/error" />
-                    <p:menuitem id="rm_404" value="404 Page" icon="fa fa-exclamation-triangle" outcome="/404" />
-                    <p:menuitem id="rm_access" value="Access Denied Page" icon="fa fa-exclamation-triangle" outcome="/access-denied" />
+                    <p:menuitem id="rm_empty" value="Empty Page" icon="fa fa-plus-circle" />
+                    <p:menuitem id="rm_login" value="Login Page" icon="fa fa-sign-in" />
+                    <p:menuitem id="rm_error" value="Error Page" icon="fa fa-close" />
+                    <p:menuitem id="rm_404" value="404 Page" icon="fa fa-exclamation-triangle" />
+                    <p:menuitem id="rm_access" value="Access Denied Page" icon="fa fa-exclamation-triangle"/>
                 </p:submenu>
                 <p:submenu id="rm_hierarchy" label="Menu Hierarchy" icon="fa fa-sitemap">
                     <p:submenu id="rm_sm1" label="Submenu 1" icon="fa fa-folder">
@@ -59,8 +59,8 @@
                         </p:submenu>
                     </p:submenu>
                 </p:submenu>
-                <p:menuitem id="rm_icons" value="Font Icons" icon="fa fa-buysellads" outcome="/font-icons" />
-                <p:menuitem id="rm_docs" value="Documentation" icon="fa fa-book" outcome="/documentation" />
+                <p:menuitem id="rm_icons" value="Font Icons" icon="fa fa-buysellads" />
+                <p:menuitem id="rm_docs" value="Documentation" icon="fa fa-book"  />
             </pr:menu>
         </h:form>
     </div>

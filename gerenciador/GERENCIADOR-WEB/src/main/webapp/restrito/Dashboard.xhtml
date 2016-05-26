@@ -1,14 +1,209 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
 
-    <ui:decorate template="/padrao/padrao.xhtml">
+    <ui:define name="head">
+        <script type="text/javascript">
+            function skinChart() {
+                this.cfg.shadow = false;
+                this.cfg.title='';
+                this.cfg.seriesColors = ['#2BB673', '#FBB040', '#1C75BC'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#F1F2F2',
+                    gridLineColor: '#E8E8E8',
+                    shadow: false
+                };
+                this.cfg.axesDefaults = {
+                    rendererOptions: {
+                        textColor: '#778D9B'
+                    }
+                };
+                this.cfg.seriesDefaults = {
+                    shadow: false,
+                    markerOptions: {
+                        shadow: false
+                    }
+                };
+            }
 
-        <ui:define name="centro">
+            function skinPie() {
+                this.cfg.seriesColors = ['#dae8ef', '#27aae1', '#33ccff', '#9fadb5'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#eaeaea',
+                    gridLineColor: '#e5ebf0',
+                    shadow: false,
+                    borderWidth: 0
+                };
+                this.cfg.seriesDefaults.shadow = false;
+            }
+        </script>
+        <style type="text/css">
+            .jqplot-target, .jqplot-axis {
+                color: #778D9B;
+            }
+        </style>
+    </ui:define>
 
-            
-        </ui:define>
-    </ui:decorate>
-</html>
+    <ui:define name="content">
+        
+        <div class="Container100">
+            <div class="ContainerIndent">
+                <div class="ShadowBox redback white">
+                    <div class="Wid60 DispBlock Fleft">
+                        <i class="fa fa-twitter Fs40 Fleft MarRight10 ShowOnDesktop"></i>
+                        <a href="#" class="Fs18 Wid70 DispInBlock MarTop5 Fleft white" style="line-height:18px;">
+                                <i class="fa fa-twitter Fs20 Fleft MarRight10 ShowOnMobile"></i> ' Ronin began trading on the DowJones Stock Exchange '
+                        </a>
+                        <span class="Fs12 Wid70 DispBlock Fleft ShowOnDesktop">#PrimeFaces #Ronin - @TheNewYorkTimes</span>
+                    </div>
+                    
+                    <div class="Wid40 Fright">
+                        <a href="#" class="Fright white Fs18 DispInlBlock FontDosisRegular HoverEffect TexAlRight" style="padding:5px 10px;"><i class=" icon-notifications-on Fs20"></i> 12 Tasks</a>
+                        <a href="#" class="Fright white Fs18 DispInlBlock FontDosisRegular HoverEffect TexAlRight" style="padding:5px 10px;"><i class=" icon-message Fs20"></i> 8 New Messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Container100 Responsive50 ">
+            <div class="Row">
+                <div class="Container25 Responsive50">
+                    <div class="ContainerIndent">
+                        <div class="ShadowBox whiteback RedBorderedBox" style="min-height:200px">
+                            <div class="Container100">
+                                <div class="ContainerIndent">
+                                    <i class="fa fa-user navyblue Fs60 Fleft MarRight10"></i>
+                                    <span class="DispBlock red Fs26" style="line-height:26px;">#{usuarioLogadoController.usuarioLogado.nome}, Bem-vindo</span>
+                                    <span class="navyblue Fs14">#{usuarioLogadoController.usuarioLogado.perfil.empresa.nome} (#{usuarioLogadoController.usuarioLogado.perfil.empresa.plano.nome})</span>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive100">
+                                <div class="ContainerIndent">
+                                    <a href="#" class="ShadowBox HoverEffect blueback white TexAlCenter"><i class="icon-calendar2 Fs30 DispBlock"></i><span class="Fs12">Reminder</span></a>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive100">
+                                <div class="ContainerIndent">
+                                    <a href="#" class="ShadowBox HoverEffect blueback white TexAlCenter"><i class="icon-addressbook2 Fs30 DispBlock"></i><span class="Fs12">Contacts</span></a>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive100">
+                                <div class="ContainerIndent">
+                                    <a href="#" class="ShadowBox HoverEffect blueback white TexAlCenter"><i class="icon-tie Fs30 DispBlock"></i><span class="Fs12">Meetings</span></a>
+                                </div>
+                            </div>
+                            <div class="EmptyBox20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive50 ">
+                    <div class="ContainerIndent ">
+                        <div class="ShadowBox whiteback NavyBlueBorderedBox" style="min-height:200px">
+                            <div class="Container100">
+                                <div class="ContainerIndent">
+                                    <h2 class="Fs26 navyblue DispInlBlock FontDosisRegular Fleft" style="line-height:26px;">Total Orders</h2>
+                                    <i class="icon-clipboard Fright navyblue Fs30"></i>
+                                </div>
+                            </div>
+                            <div class="Container50 Responsive100">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs20 FontDosisRegular leaden">This Month</span>
+                                    <div class="EmptyBox10"></div>
+                                    <span class="DispBlock Fs40 leaden" style="line-height:40px;">2,523</span>
+                                    <span class="DispBlock Fs16 FontDosisLight green">New Orders +26%</span>
+                                </div>
+                            </div>
+                            <div class="Container50 Responsive100">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs20 FontDosisRegular leaden">This Year</span>
+                                    <div class="EmptyBox10"></div>
+                                    <span class="DispBlock Fs40 leaden" style="line-height:40px;">4,975</span>
+                                    <span class="DispBlock Fs16 FontDosisLight red">New Orders -37%</span>
+                                </div>
+                            </div>
+                            <div class="EmptyBox20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive100 ">
+                    <div class="ContainerIndent ">
+                        <div class="ShadowBox whiteback NavyBlueBorderedBox" style="min-height:200px">
+                            <div class="Container100">
+                                <div class="ContainerIndent">
+                                    <h2 class="Fs26 navyblue DispInlBlock FontDosisRegular Fleft" style="line-height:26px;">Total Showroom Visits</h2>
+                                    <i class="icon-local-mall Fright navyblue Fs30"></i>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">Just Today</span>
+                                    <div class="EmptyBox10"></div>
+                                    <span class="DispBlock Fs30 leaden" style="line-height:30px;">2,367</span>
+                                    <span class="DispBlock Fs14 FontDosisLight green">Visitors +5%</span>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">This Week</span>
+                                    <div class="EmptyBox10"></div>
+                                    <span class="DispBlock Fs30 leaden" style="line-height:30px;">18,107</span>
+                                    <span class="DispBlock Fs14 FontDosisLight orange">Visitors 7%</span>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">This Month</span>
+                                    <div class="EmptyBox10"></div>
+                                    <span class="DispBlock Fs30 leaden" style="line-height:30px;">81,451</span>
+                                    <span class="DispBlock Fs14 FontDosisLight red">Visitors -3%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Container25 Responsive100 ">
+                    <div class="ContainerIndent ">
+                        <div class="ShadowBox whiteback NavyBlueBorderedBox" style="min-height:200px">
+                            <div class="Container100">
+                                <div class="ContainerIndent">
+                                    <h2 class="Fs26 navyblue DispInlBlock FontDosisRegular Fleft" style="line-height:26px;">Total Income</h2>
+                                    <i class="icon-safe Fright navyblue Fs30"></i>
+                                </div>
+                            </div>
+                            <div class="Container50 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">Today</span>
+                                    <span class="DispBlock Fs24 green" style="line-height:24px;">$ 45,340</span>
+                                </div>
+                            </div>
+                            <div class="Container50 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">This Week</span>
+                                    <span class="DispBlock Fs24 blue" style="line-height:24px;">$ 165,340</span>
+                                </div>
+                            </div>
+                            <div class="Container50 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">This Month</span>
+                                    <span class="DispBlock Fs24 blue" style="line-height:24px;">$ 1,415,810</span>
+                                </div>
+                            </div>
+                            <div class="Container50 Responsive50">
+                                <div class="ContainerIndent">
+                                    <span class="DispBlock Fs18 FontDosisRegular leaden">This Year</span>
+                                    <span class="DispBlock Fs24 orange" style="line-height:24px;">$ 7,115,324</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>
