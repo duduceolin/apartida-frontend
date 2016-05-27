@@ -1,0 +1,88 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="head">
+        <script type="text/javascript">
+            function skinChart() {
+                this.cfg.shadow = false;
+                this.cfg.title='';
+                this.cfg.seriesColors = ['#2BB673', '#FBB040', '#1C75BC'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#F1F2F2',
+                    gridLineColor: '#E8E8E8',
+                    shadow: false
+                };
+                this.cfg.axesDefaults = {
+                    rendererOptions: {
+                        textColor: '#778D9B'
+                    }
+                };
+                this.cfg.seriesDefaults = {
+                    shadow: false,
+                    markerOptions: {
+                        shadow: false
+                    }
+                };
+            }
+
+            function skinPie() {
+                this.cfg.seriesColors = ['#dae8ef', '#27aae1', '#33ccff', '#9fadb5'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#eaeaea',
+                    gridLineColor: '#e5ebf0',
+                    shadow: false,
+                    borderWidth: 0
+                };
+                this.cfg.seriesDefaults.shadow = false;
+            }
+        </script>
+        <style type="text/css">
+            .jqplot-target, .jqplot-axis {
+                color: #778D9B;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="Container100 Responsive50 ">
+            <div class="Row">
+                <div class="Container25 Responsive50">
+                    <div class="ContainerIndent">
+                        <div class="ShadowBox whiteback RedBorderedBox" style="min-height:200px">
+                            <div class="Container100">
+                                <div class="ContainerIndent">
+                                    <i class="fa fa-user navyblue Fs60 Fleft MarRight10"></i>
+                                    <span class="DispBlock red Fs26" style="line-height:26px;">#{usuarioLogadoController.usuarioLogado.nome}, Bem-vindo</span>
+                                    <span class="navyblue Fs14">#{usuarioLogadoController.usuarioLogado.perfil.empresa.nome} (#{usuarioLogadoController.usuarioLogado.perfil.empresa.plano.nome})</span>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive100">
+                                <div class="ContainerIndent">
+                                    <a href="#" class="ShadowBox HoverEffect blueback white TexAlCenter"><i class="icon-calendar2 Fs30 DispBlock"></i><span class="Fs12">Reminder</span></a>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive100">
+                                <div class="ContainerIndent">
+                                    <a href="#" class="ShadowBox HoverEffect blueback white TexAlCenter"><i class="icon-addressbook2 Fs30 DispBlock"></i><span class="Fs12">Contacts</span></a>
+                                </div>
+                            </div>
+                            <div class="Container33 Responsive100">
+                                <div class="ContainerIndent">
+                                    <a href="#" class="ShadowBox HoverEffect blueback white TexAlCenter"><i class="icon-tie Fs30 DispBlock"></i><span class="Fs12">Meetings</span></a>
+                                </div>
+                            </div>
+                            <div class="EmptyBox20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

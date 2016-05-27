@@ -1,0 +1,27 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pr="http://primefaces.org/ronin">
+
+    <div id="layout-menu-cover">
+        <ui:include src="topbar.xhtml" />
+        <h:form id="menuform">
+            <pr:menu>
+                <p:menuitem id="rm_dashboard" value="Dashboard" icon="fa fa-joomla" outcome="Dashboard"/>
+                <p:submenu id="rm_perfil" label="Gerenciar perfis" icon="fa fa-users">
+                    <p:menuitem id="rm_listar_perfis" value="Listar perfis" icon="fa fa-group" ajax="false" outcome="ListarPerfis"/>
+                    <p:menuitem id="rm_cadastrar_perfil" value="Cadastrar perfil" icon="fa fa-user-plus" ajax="false" />
+                </p:submenu>
+                <p:submenu id="rm_funcionario" label="Gerenciar funcionários" icon="fa fa-users">
+                    <p:menuitem id="rm_listar_funcionarios" value="Listar funcionários" icon="fa fa-users" ajax="false" outcome="ListarFuncionarios"/>
+                    <p:menuitem id="rm_cadastrar_funcionario" value="Cadastrar funcionário" icon="fa fa-user-plus" ajax="false" />
+                </p:submenu>
+                
+            </pr:menu>
+        </h:form>
+    </div>
+
+</ui:composition>

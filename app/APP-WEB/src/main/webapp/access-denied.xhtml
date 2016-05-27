@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>PrimeFaces Ronin</title>
+        <ui:insert name="head" />
+    </h:head>
+
+    <h:body styleClass="loginbody">
+        
+        <div class="Wid25 MarAuto DispBlock OvHidden Responsive100">
+            <div class="ContainerIndent">
+                <div class="Wid90 MarAuto">
+                    <div class="ShadowBox whiteback TexAlCenter OrangeBorderedBox BordRad15" style="margin-top:100px;">
+                        <div class="EmptyBox30"></div>
+                        <i class="orange Fs100 fa fa-eye-slash"></i>
+                        <div class="EmptyBox10"></div>
+                        <div class="Wid100 orange Fs30 FontDosisSemiBold">Access Denied Please Check Your Permissions !</div>
+                        <div class="Wid100 navyblue Fs18">Sorry, but you have no access to this page.</div>
+                        <div class="EmptyBox30"></div>
+                        <div class="Seperator"></div>
+                        <div class="EmptyBox30"></div>
+                        <div class="Wid100"><p:button value="Back To Dashboard" icon="fa fa-dropbox Fs18 white" styleClass="Wid60 OrangeButton" href="dashboard.xhtml"/></div>
+                        <div class="EmptyBox30"></div>
+                    </div>
+                    <div class="Wid100 TexAlCenter MarTop20 softgray Fs14 FontDosisRegular">
+                        <i class="fa fa-copyright"></i>  PrimeFaces Ronin Theme And Layout <br/> All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h:outputStylesheet name="css/core-layout.css" library="ronin-layout" />
+        <h:outputStylesheet name="css/font-awesome.css" library="ronin-layout" />
+        <h:outputStylesheet name="css/animate.css" library="ronin-layout" />
+        <h:outputStylesheet name="css/ronin-layout.css" library="ronin-layout" />
+    </h:body>
+
+</html>

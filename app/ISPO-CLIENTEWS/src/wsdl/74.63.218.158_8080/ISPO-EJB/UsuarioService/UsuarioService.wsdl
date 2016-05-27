@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://isoccer.com.br/servicos/UsuarioService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="UsuarioService" targetNamespace="http://isoccer.com.br/servicos/UsuarioService">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://isoccer.com.br/servicos/UsuarioService" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://isoccer.com.br/servicos/UsuarioService">
+  <xs:element name="BuscarUsuarioDTO" type="tns:buscarUsuarioDTO"/>
+  <xs:complexType name="inBuscarUsuario">
+    <xs:sequence>
+      <xs:element name="dadosBuscarUsuario" type="tns:buscarUsuarioDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarUsuarioDTO">
+    <xs:sequence>
+      <xs:element name="login" type="xs:string"/>
+      <xs:element name="senha" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="outBuscarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="tns:usuarioDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuarioDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="admin" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="login" type="xs:string"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+      <xs:element minOccurs="0" name="perfil" type="tns:perfilDTO"/>
+      <xs:element minOccurs="0" name="senha" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="perfilDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="empresa" type="tns:empresaDTO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empresaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cep" type="xs:string"/>
+      <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+      <xs:element minOccurs="0" name="cnpj" type="xs:string"/>
+      <xs:element minOccurs="0" name="estado" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+      <xs:element minOccurs="0" name="pais" type="xs:string"/>
+      <xs:element minOccurs="0" name="plano" type="tns:planoDTO"/>
+      <xs:element minOccurs="0" name="telefone" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="planoDTO">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="funcionalidadeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idFuncionalidade" type="xs:long"/>
+      <xs:element minOccurs="0" name="idMenuPai" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+      <xs:element minOccurs="0" name="url" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IspoException" type="tns:IspoException"/>
+  <xs:complexType name="IspoException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="inBuscarUsuario" nillable="true" type="tns:inBuscarUsuario"/>
+  <xs:element name="usuario" nillable="true" type="tns:outBuscarUsuario"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarUsuario">
+    <wsdl:part element="tns:inBuscarUsuario" name="inBuscarUsuario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarUsuarioResponse">
+    <wsdl:part element="tns:usuario" name="usuario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IspoException">
+    <wsdl:part element="tns:IspoException" name="IspoException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UsuarioService">
+    <wsdl:operation name="buscarUsuario">
+      <wsdl:input message="tns:buscarUsuario" name="buscarUsuario">
+    </wsdl:input>
+      <wsdl:output message="tns:buscarUsuarioResponse" name="buscarUsuarioResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:IspoException" name="IspoException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UsuarioServiceSoapBinding" type="tns:UsuarioService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="buscarUsuario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscarUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IspoException">
+        <soap:fault name="IspoException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsuarioService">
+    <wsdl:port binding="tns:UsuarioServiceSoapBinding" name="UsuarioServicePort">
+      <soap:address location="http://74.63.218.158:8080/ISPO-EJB/UsuarioService/UsuarioService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
