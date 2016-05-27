@@ -10,57 +10,16 @@
         <ui:include src="topbar.xhtml" />
         <h:form id="menuform">
             <pr:menu>
-                <p:menuitem id="rm_dashboard" value="Dashboard" icon="fa fa-joomla"/>
-                <p:menuitem id="rm_promotion" value="Promotion Page" icon="fa fa-joomla"/>
-                <p:submenu id="rm_layout" label="Layouts" icon="fa fa-desktop">
-                    <p:menuitem id="rm_dark_layout" value="Dark Layout" icon="fa fa-leaf" ajax="false" />
-                    <p:menuitem id="rm_light_layout" value="Light Layout" icon="fa fa-leaf" ajax="false" />
+                <p:menuitem id="rm_dashboard" value="Dashboard" icon="fa fa-joomla" outcome="Dashboard"/>
+                <p:submenu id="rm_perfil" label="Gerenciar perfis" icon="fa fa-users">
+                    <p:menuitem id="rm_listar_perfis" value="Listar perfis" icon="fa fa-group" ajax="false" outcome="ListarPerfis"/>
+                    <p:menuitem id="rm_cadastrar_perfil" value="Cadastrar perfil" icon="fa fa-user-plus" ajax="false" />
                 </p:submenu>
-                <p:submenu id="rm_theme" label="Ronin Theme" icon="fa fa-trophy">
-                    <p:submenu id="rm_forms" label="Forms" icon="fa fa-folder">
-                        <p:menuitem id="rm_forms_default" value="Default" icon="fa fa-file-text-o" />
-                        <p:menuitem id="rm_forms_lesscurve" value="Less Curve" icon="fa fa-file-text-o"/>
-                    </p:submenu>
-                    <p:menuitem id="rm_sample" value="Sample Page" icon="fa fa-columns" />
-                    <p:menuitem id="rm_data" value="Data Components" icon="fa fa-calendar-o" />
-                    <p:menuitem id="rm_datatable" value="DataTable" icon="fa fa-table" />
-                    <p:menuitem id="rm_panels" value="Panels" icon="fa fa-list-alt" />
-                    <p:menuitem id="rm_overlays" value="Overlays" icon="fa fa-picture-o"/>
-                    <p:menuitem id="rm_menus" value="Menus" icon="fa fa-sitemap" />
-                    <p:menuitem id="rm_messages" value="Messages" icon="fa fa-comments"/>
-                    <p:menuitem id="rm_charts" value="Charts" icon="fa fa-bar-chart" />
-                    <p:menuitem id="rm_fileupload" value="FileUpload" icon="fa fa-cloud-upload" />
-                    <p:menuitem id="rm_misc" value="Misc" icon="fa fa-ge" />
+                <p:submenu id="rm_funcionario" label="Gerenciar funcionários" icon="fa fa-users">
+                    <p:menuitem id="rm_listar_funcionarios" value="Listar funcionários" icon="fa fa-users" ajax="false" outcome="ListarFuncionarios"/>
+                    <p:menuitem id="rm_cadastrar_funcionario" value="Cadastrar funcionário" icon="fa fa-user-plus" ajax="false" />
                 </p:submenu>
-                <p:submenu id="rm_default" label="Default Pages" icon="fa fa-newspaper-o">
-                    <p:menuitem id="rm_empty" value="Empty Page" icon="fa fa-plus-circle" />
-                    <p:menuitem id="rm_login" value="Login Page" icon="fa fa-sign-in" />
-                    <p:menuitem id="rm_error" value="Error Page" icon="fa fa-close" />
-                    <p:menuitem id="rm_404" value="404 Page" icon="fa fa-exclamation-triangle" />
-                    <p:menuitem id="rm_access" value="Access Denied Page" icon="fa fa-exclamation-triangle"/>
-                </p:submenu>
-                <p:submenu id="rm_hierarchy" label="Menu Hierarchy" icon="fa fa-sitemap">
-                    <p:submenu id="rm_sm1" label="Submenu 1" icon="fa fa-folder">
-                        <p:submenu id="rm_sm11" label="Submenu 1.1" icon="fa fa-folder">
-                            <p:submenu id="rm_sm111" label="Submenu 1.1.1" icon="fa fa-folder">
-                                <p:menuitem id="rm_lnk1111" value="Link 1" styleClass="fa fa-chain" url="#" />
-                                <p:menuitem id="rm_lnk1112" value="Link 2" styleClass="fa fa-chain" url="#" />
-                                <p:menuitem id="rm_lnk1113" value="Link 3" styleClass="fa fa-chain" url="#" />
-                            </p:submenu>
-                        </p:submenu>
-                    </p:submenu>
-                    <p:submenu id="rm_sm2" label="Submenu 2" icon="fa fa-folder">
-                        <p:submenu id="rm_22" label="Submenu 2.2" icon="fa fa-folder">
-                            <p:submenu id="rm_221" label="Submenu 2.2.1" icon="fa fa-folder">
-                                <p:menuitem id="rm_lnk2211" value="Link 1" styleClass="fa fa-chain" url="#" />
-                                <p:menuitem id="rm_lnk2212" value="Link 2" styleClass="fa fa-chain" url="#" />
-                                <p:menuitem id="rm_lnk2213" value="Link 3" styleClass="fa fa-chain" url="#" />
-                            </p:submenu>
-                        </p:submenu>
-                    </p:submenu>
-                </p:submenu>
-                <p:menuitem id="rm_icons" value="Font Icons" icon="fa fa-buysellads" />
-                <p:menuitem id="rm_docs" value="Documentation" icon="fa fa-book"  />
+                
             </pr:menu>
         </h:form>
     </div>
