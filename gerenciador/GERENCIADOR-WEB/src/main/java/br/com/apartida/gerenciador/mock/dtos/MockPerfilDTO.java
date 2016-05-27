@@ -20,7 +20,8 @@ public class MockPerfilDTO {
     private List<MockFuncionalidadesDTO> listaFuncionalidades;
     
     public MockPerfilDTO(Long id, String nome, Boolean admin){
-       this.id = id;
+       
+        this.id = id;
        this.nome = nome;
        this.isAdmin = admin;
        listaFuncionalidades = new ArrayList<>();
