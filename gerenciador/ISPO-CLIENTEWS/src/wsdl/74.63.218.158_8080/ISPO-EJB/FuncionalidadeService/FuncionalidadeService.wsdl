@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://apartida.com.br/servicos/FuncionalidadeService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="FuncionalidadeService" targetNamespace="http://apartida.com.br/servicos/FuncionalidadeService">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://apartida.com.br/servicos/FuncionalidadeService" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://apartida.com.br/servicos/FuncionalidadeService">
+  <xs:complexType name="inPesquisarPelaEmpresa">
+    <xs:sequence>
+      <xs:element name="idEmpresa" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="outPesquisarFuncionalidades">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="funcionalidadeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idFuncionalidade" type="xs:long"/>
+      <xs:element minOccurs="0" name="idMenuPai" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+      <xs:element minOccurs="0" name="url" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IspoException" type="tns:IspoException"/>
+  <xs:complexType name="IspoException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="pesquisarFuncionalidadesEmpresa" nillable="true" type="tns:inPesquisarPelaEmpresa"/>
+  <xs:element name="pesquisarFuncionalidadesEmpresaResponse" nillable="true" type="tns:outPesquisarFuncionalidades"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="pesquisarFuncionalidadesEmpresaResponse">
+    <wsdl:part element="tns:pesquisarFuncionalidadesEmpresaResponse" name="pesquisarFuncionalidadesEmpresaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IspoException">
+    <wsdl:part element="tns:IspoException" name="IspoException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pesquisarFuncionalidadesEmpresa">
+    <wsdl:part element="tns:pesquisarFuncionalidadesEmpresa" name="pesquisarFuncionalidadesEmpresa">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FuncionalidadeService">
+    <wsdl:operation name="pesquisarFuncionalidadesEmpresa">
+      <wsdl:input message="tns:pesquisarFuncionalidadesEmpresa" name="pesquisarFuncionalidadesEmpresa">
+    </wsdl:input>
+      <wsdl:output message="tns:pesquisarFuncionalidadesEmpresaResponse" name="pesquisarFuncionalidadesEmpresaResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:IspoException" name="IspoException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FuncionalidadeServiceSoapBinding" type="tns:FuncionalidadeService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pesquisarFuncionalidadesEmpresa">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="pesquisarFuncionalidadesEmpresa">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pesquisarFuncionalidadesEmpresaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IspoException">
+        <soap:fault name="IspoException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FuncionalidadeService">
+    <wsdl:port binding="tns:FuncionalidadeServiceSoapBinding" name="FuncionalidadeServicePort">
+      <soap:address location="http://74.63.218.158:8080/ISPO-EJB/FuncionalidadeService/FuncionalidadeService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
