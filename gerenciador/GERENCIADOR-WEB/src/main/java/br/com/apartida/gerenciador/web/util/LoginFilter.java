@@ -5,7 +5,7 @@
  */
 package br.com.apartida.gerenciador.web.util;
 
-import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
+import br.com.apartida.servicos.usuarioservice.UsuarioDTO;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

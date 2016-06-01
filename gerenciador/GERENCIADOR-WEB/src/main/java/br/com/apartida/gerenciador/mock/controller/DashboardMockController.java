@@ -5,9 +5,9 @@
  */
 package br.com.apartida.gerenciador.mock.controller;
 
-import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
 import br.com.apartida.gerenciador.web.controller.LoginController;
 import br.com.apartida.gerenciador.web.util.SessionContext;
+import br.com.apartida.servicos.usuarioservice.UsuarioDTO;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 

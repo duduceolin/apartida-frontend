@@ -15,26 +15,31 @@
                 <div class="ShadowBox whiteback RedBorderedBox ui-fluid">
                     <h1 class="BigTopic">Gerenciamento de perfis</h1>
 
-                    <div class="Container80 Responsive80" style="margin: 0 auto;" >
-                        
+                    <div class="Container100 Responsive100">
+
                         <h:form id="form">
-                            <p:dataTable id="singleDT" var="perfil" value="#{perfisMockController.perfis}" selectionMode="single" selection="#{perfisMockController.perfilSelecionado}" rowKey="#{perfil.id}"
+                            <p:dataTable id="singleDT" var="perfil" value="#{perfisMockController.perfis}" rowKey="#{perfil.id}"
                                          rows="10" paginator="true" paginatorPosition="bottom" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                          rowsPerPageTemplate="5,10,15" emptyMessage="Sem perfis encontrados." reflow="true" >
                                 <f:facet name="header">
                                     Lista de perfis
                                 </f:facet>
 
-                                <p:ajax event="rowSelect" update=":form:acessosDetail" oncomplete="PF('acessosDialog').show()" />
+                                <p:outputLabel value = "" />
 
-                                <p:column headerText="Id" sortBy="#{perfil.id}">
+                                <p:column headerText="Id" sortBy="#{perfil.id}" width="10%">
                                     <h:outputText value="#{perfil.id}" />
                                 </p:column>
-                                <p:column headerText="Nome" sortBy="#{perfil.nome}">
+                                <p:column headerText="Nome" sortBy="#{perfil.nome}" width="60%">
                                     <h:outputText value="#{perfil.nome}" />
                                 </p:column>
-                                <p:column headerText="Administrador" sortBy="#{perfil.isAdmin}">
-                                    <h:outputText value="#{perfil.isAdmin}" />
+                                <p:column headerText="Administrador" sortBy="#{perfil.isAdmin}" width="10%">
+                                    <p:inputSwitch onLabel="Sim" offLabel="Não" value="#{perfil.isAdmin}"/> 
+                                </p:column>
+                                <p:column headerText="Acessos" width="10%">
+                                    <p:commandButton value="Editar" update=":form:acessosDetail" oncomplete="PF('acessosDialog').show()">
+                                        <f:setPropertyActionListener value="#{perfil}" target="#{perfisMockController.perfilSelecionado}" />
+                                    </p:commandButton>
                                 </p:column>
                             </p:dataTable>
 

@@ -5,7 +5,7 @@
  */
 package br.com.apartida.gerenciador.web.util;
 
-import br.com.isoccer.servicos.usuarioservice.UsuarioDTO;
+import br.com.apartida.servicos.usuarioservice.UsuarioDTO;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
