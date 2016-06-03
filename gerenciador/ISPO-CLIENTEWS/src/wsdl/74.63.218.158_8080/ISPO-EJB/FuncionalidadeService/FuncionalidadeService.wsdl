@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://apartida.com.br/servicos/FuncionalidadeService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="FuncionalidadeService" targetNamespace="http://apartida.com.br/servicos/FuncionalidadeService">
   <wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://apartida.com.br/servicos/FuncionalidadeService" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://apartida.com.br/servicos/FuncionalidadeService">
-  <xs:complexType name="inPesquisarPelaEmpresa">
+  <xs:complexType name="inPesquisarFuncionalidadesPlano">
     <xs:sequence>
-      <xs:element name="idEmpresa" type="xs:long"/>
+      <xs:element name="idPlano" type="xs:long"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="outPesquisarFuncionalidades">
+  <xs:complexType name="outPesquisarFuncionalidadesPlano">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="menu" nillable="true" type="tns:funcionalidadeToMenuDTO"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="funcionalidadeDTO">
+  <xs:complexType name="funcionalidadeToMenuDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="idFuncionalidade" type="xs:long"/>
-      <xs:element minOccurs="0" name="idMenuPai" type="xs:long"/>
       <xs:element minOccurs="0" name="nome" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="subFuncionalidades" nillable="true" type="tns:funcionalidadeToMenuDTO"/>
       <xs:element minOccurs="0" name="url" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
@@ -25,27 +25,27 @@
       <xs:element minOccurs="0" name="message" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="pesquisarFuncionalidadesEmpresa" nillable="true" type="tns:inPesquisarPelaEmpresa"/>
-  <xs:element name="pesquisarFuncionalidadesEmpresaResponse" nillable="true" type="tns:outPesquisarFuncionalidades"/>
+  <xs:element name="InPesquisarFuncionalidadesPlano" nillable="true" type="tns:inPesquisarFuncionalidadesPlano"/>
+  <xs:element name="funcionalidadesMenu" nillable="true" type="tns:outPesquisarFuncionalidadesPlano"/>
 </xs:schema>
   </wsdl:types>
-  <wsdl:message name="pesquisarFuncionalidadesEmpresaResponse">
-    <wsdl:part element="tns:pesquisarFuncionalidadesEmpresaResponse" name="pesquisarFuncionalidadesEmpresaResponse">
+  <wsdl:message name="pesquisarFuncionalidadesPlanoMenu">
+    <wsdl:part element="tns:InPesquisarFuncionalidadesPlano" name="InPesquisarFuncionalidadesPlano">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pesquisarFuncionalidadesPlanoMenuResponse">
+    <wsdl:part element="tns:funcionalidadesMenu" name="funcionalidadesMenu">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="IspoException">
     <wsdl:part element="tns:IspoException" name="IspoException">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="pesquisarFuncionalidadesEmpresa">
-    <wsdl:part element="tns:pesquisarFuncionalidadesEmpresa" name="pesquisarFuncionalidadesEmpresa">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:portType name="FuncionalidadeService">
-    <wsdl:operation name="pesquisarFuncionalidadesEmpresa">
-      <wsdl:input message="tns:pesquisarFuncionalidadesEmpresa" name="pesquisarFuncionalidadesEmpresa">
+    <wsdl:operation name="pesquisarFuncionalidadesPlanoMenu">
+      <wsdl:input message="tns:pesquisarFuncionalidadesPlanoMenu" name="pesquisarFuncionalidadesPlanoMenu">
     </wsdl:input>
-      <wsdl:output message="tns:pesquisarFuncionalidadesEmpresaResponse" name="pesquisarFuncionalidadesEmpresaResponse">
+      <wsdl:output message="tns:pesquisarFuncionalidadesPlanoMenuResponse" name="pesquisarFuncionalidadesPlanoMenuResponse">
     </wsdl:output>
       <wsdl:fault message="tns:IspoException" name="IspoException">
     </wsdl:fault>
@@ -53,12 +53,12 @@
   </wsdl:portType>
   <wsdl:binding name="FuncionalidadeServiceSoapBinding" type="tns:FuncionalidadeService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="pesquisarFuncionalidadesEmpresa">
+    <wsdl:operation name="pesquisarFuncionalidadesPlanoMenu">
       <soap:operation soapAction="" style="document"/>
-      <wsdl:input name="pesquisarFuncionalidadesEmpresa">
+      <wsdl:input name="pesquisarFuncionalidadesPlanoMenu">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="pesquisarFuncionalidadesEmpresaResponse">
+      <wsdl:output name="pesquisarFuncionalidadesPlanoMenuResponse">
         <soap:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="IspoException">

@@ -2,7 +2,7 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/ISPO-EJB/UsuarioService/UsuarioService?WSDL" uri="wsdl/localhost_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl"/>
     <system systemId="http://74.63.218.158:8080/ISPO-EJB/UsuarioService/UsuarioService?WSDL" uri="wsdl/74.63.218.158_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl"/>
-    <system systemId="http://74.63.218.158:8080/ISPO-EJB/UsuarioService/UsuarioService?wsdl" uri="wsdl/74.63.218.158_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl"/>
-    <system systemId="http://74.63.218.158:8080/ISPO-EJB/FuncionalidadeService/FuncionalidadeService?wsdl" uri="wsdl/74.63.218.158_8080/ISPO-EJB/FuncionalidadeService/FuncionalidadeService.wsdl"/>
     <system systemId="http://74.63.218.158:8080/ISPO-EJB/PerfilService/PerfilService?wsdl" uri="wsdl/74.63.218.158_8080/ISPO-EJB/PerfilService/PerfilService.wsdl"/>
+    <system systemId="http://74.63.218.158:8080/ISPO-EJB/FuncionalidadeService/FuncionalidadeService?wsdl" uri="wsdl/74.63.218.158_8080/ISPO-EJB/FuncionalidadeService/FuncionalidadeService.wsdl"/>
+    <system systemId="http://74.63.218.158:8080/ISPO-EJB/UsuarioService/UsuarioService?wsdl" uri="wsdl/74.63.218.158_8080/ISPO-EJB/UsuarioService/UsuarioService.wsdl"/>
 </catalog>
