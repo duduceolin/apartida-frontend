@@ -24,6 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _InCadastrarAlterarPerfil_QNAME = new QName("http://apartida.com.br/servicos/PerfilService", "inCadastrarAlterarPerfil");
+    private final static QName _Status_QNAME = new QName("http://apartida.com.br/servicos/PerfilService", "status");
     private final static QName _InPesquisarPerfis_QNAME = new QName("http://apartida.com.br/servicos/PerfilService", "inPesquisarPerfis");
     private final static QName _Perfis_QNAME = new QName("http://apartida.com.br/servicos/PerfilService", "perfis");
     private final static QName _IspoException_QNAME = new QName("http://apartida.com.br/servicos/PerfilService", "IspoException");
@@ -33,6 +35,22 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link InCadastrarAlterarPerfil }
+     * 
+     */
+    public InCadastrarAlterarPerfil createInCadastrarAlterarPerfil() {
+        return new InCadastrarAlterarPerfil();
+    }
+
+    /**
+     * Create an instance of {@link OutCadastrarAlterarPerfil }
+     * 
+     */
+    public OutCadastrarAlterarPerfil createOutCadastrarAlterarPerfil() {
+        return new OutCadastrarAlterarPerfil();
     }
 
     /**
@@ -81,6 +99,32 @@ public class ObjectFactory {
      */
     public PerfilFuncDTO createPerfilFuncDTO() {
         return new PerfilFuncDTO();
+    }
+
+    /**
+     * Create an instance of {@link FuncionalidadeDTO }
+     * 
+     */
+    public FuncionalidadeDTO createFuncionalidadeDTO() {
+        return new FuncionalidadeDTO();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link InCadastrarAlterarPerfil }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://apartida.com.br/servicos/PerfilService", name = "inCadastrarAlterarPerfil")
+    public JAXBElement<InCadastrarAlterarPerfil> createInCadastrarAlterarPerfil(InCadastrarAlterarPerfil value) {
+        return new JAXBElement<InCadastrarAlterarPerfil>(_InCadastrarAlterarPerfil_QNAME, InCadastrarAlterarPerfil.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OutCadastrarAlterarPerfil }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://apartida.com.br/servicos/PerfilService", name = "status")
+    public JAXBElement<OutCadastrarAlterarPerfil> createStatus(OutCadastrarAlterarPerfil value) {
+        return new JAXBElement<OutCadastrarAlterarPerfil>(_Status_QNAME, OutCadastrarAlterarPerfil.class, null, value);
     }
 
     /**

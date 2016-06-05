@@ -1,5 +1,5 @@
 
-package br.com.apartida.servicos.usuarioservice;
+package br.com.apartida.servicos.perfilservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

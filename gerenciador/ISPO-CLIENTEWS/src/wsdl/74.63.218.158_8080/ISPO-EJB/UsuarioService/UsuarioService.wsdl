@@ -59,7 +59,10 @@
   </xs:complexType>
   <xs:complexType name="funcionalidadeDTO">
     <xs:sequence>
+      <xs:element minOccurs="0" name="icone" type="xs:string"/>
       <xs:element minOccurs="0" name="idFuncionalidade" type="xs:long"/>
+      <xs:element minOccurs="0" name="idMenuPai" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="IspoException" type="tns:IspoException"/>

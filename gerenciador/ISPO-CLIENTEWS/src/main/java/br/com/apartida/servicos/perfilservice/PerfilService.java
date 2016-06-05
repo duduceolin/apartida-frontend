@@ -38,4 +38,19 @@ public interface PerfilService {
         throws IspoException_Exception
     ;
 
+    /**
+     * 
+     * @param inCadastrarAlterarPerfil
+     * @return
+     *     returns br.com.apartida.servicos.perfilservice.OutCadastrarAlterarPerfil
+     * @throws IspoException_Exception
+     */
+    @WebMethod
+    @WebResult(name = "status", targetNamespace = "http://apartida.com.br/servicos/PerfilService", partName = "status")
+    public OutCadastrarAlterarPerfil cadastrarAlterarPerfil(
+        @WebParam(name = "inCadastrarAlterarPerfil", targetNamespace = "http://apartida.com.br/servicos/PerfilService", partName = "inCadastrarAlterarPerfil")
+        InCadastrarAlterarPerfil inCadastrarAlterarPerfil)
+        throws IspoException_Exception
+    ;
+
 }

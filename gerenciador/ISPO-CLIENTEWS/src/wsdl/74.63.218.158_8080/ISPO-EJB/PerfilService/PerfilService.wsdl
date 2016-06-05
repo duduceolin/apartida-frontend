@@ -37,6 +37,28 @@
       <xs:element minOccurs="0" name="url" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="inCadastrarAlterarPerfil">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="idEmpresa" type="xs:long"/>
+      <xs:element name="nome" type="xs:string"/>
+      <xs:element name="admin" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="acessos" nillable="true" type="tns:funcionalidadeDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="funcionalidadeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="icone" type="xs:string"/>
+      <xs:element minOccurs="0" name="idFuncionalidade" type="xs:long"/>
+      <xs:element minOccurs="0" name="idMenuPai" type="xs:long"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="outCadastrarAlterarPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="IspoException" type="tns:IspoException"/>
   <xs:complexType name="IspoException">
     <xs:sequence>
@@ -45,10 +67,20 @@
   </xs:complexType>
   <xs:element name="inPesquisarPerfis" nillable="true" type="tns:inPesquisarPelaEmpresa"/>
   <xs:element name="perfis" nillable="true" type="tns:outPesquisarPerfis"/>
+  <xs:element name="inCadastrarAlterarPerfil" nillable="true" type="tns:inCadastrarAlterarPerfil"/>
+  <xs:element name="status" nillable="true" type="tns:outCadastrarAlterarPerfil"/>
 </xs:schema>
   </wsdl:types>
+  <wsdl:message name="cadastrarAlterarPerfilResponse">
+    <wsdl:part element="tns:status" name="status">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="pesquisarPerfisPelaEmpresa">
     <wsdl:part element="tns:inPesquisarPerfis" name="inPesquisarPerfis">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cadastrarAlterarPerfil">
+    <wsdl:part element="tns:inCadastrarAlterarPerfil" name="inCadastrarAlterarPerfil">
     </wsdl:part>
   </wsdl:message>
   <wsdl:message name="IspoException">
@@ -68,6 +100,14 @@
       <wsdl:fault message="tns:IspoException" name="IspoException">
     </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="cadastrarAlterarPerfil">
+      <wsdl:input message="tns:cadastrarAlterarPerfil" name="cadastrarAlterarPerfil">
+    </wsdl:input>
+      <wsdl:output message="tns:cadastrarAlterarPerfilResponse" name="cadastrarAlterarPerfilResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:IspoException" name="IspoException">
+    </wsdl:fault>
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="PerfilServiceSoapBinding" type="tns:PerfilService">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -77,6 +117,18 @@
         <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output name="pesquisarPerfisPelaEmpresaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IspoException">
+        <soap:fault name="IspoException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cadastrarAlterarPerfil">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cadastrarAlterarPerfil">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cadastrarAlterarPerfilResponse">
         <soap:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="IspoException">
