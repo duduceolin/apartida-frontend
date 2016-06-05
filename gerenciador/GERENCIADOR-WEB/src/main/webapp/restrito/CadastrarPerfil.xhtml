@@ -10,8 +10,26 @@
     </ui:define>
 
     <ui:define name="content">
-        
-        mozovo
+          <div class="Container100 ui-fluid">
+            <div class="ContainerIndent">
+                <div class="ShadowBox whiteback RedBorderedBox">
+                    <h2 class="BigTopic">Cadastro de perfil</h2>
+                     <p:panelGrid columns="3" columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-4" layout="grid" styleClass="ui-panelgrid-blank" style="border:0px none; background-color:transparent;">
+                        
+                        <p:outputLabel for="nome" value="Nome de identificação:"/>
+                        <p:inputText id="nome" required="true" requiredMessage="#{msgs.msgCampoNomeNaoPreenchido}"/>
+                        <p:outputLabel for="nome" value="#{msgs['STR_TESTE']}"/>
+                   
+                        <p:outputLabel for="admin" value="Perfil administrador:"/>
+                        <p:inputSwitch id="admin" onLabel="Sim" offLabel="Não" required="true"/>
+                        <p:outputLabel for="admin" value="Tipo do perfil desejado."/>
+                   
+                        
+                     </p:panelGrid>
+                </div>
+            </div>
+          </div>
+
     </ui:define>
 
 </ui:composition>
