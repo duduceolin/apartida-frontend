@@ -33,6 +33,7 @@
       <xs:element minOccurs="0" name="empresa" type="tns:empresaDTO"/>
       <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
       <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="isAdmin" type="xs:boolean"/>
       <xs:element minOccurs="0" name="nome" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>

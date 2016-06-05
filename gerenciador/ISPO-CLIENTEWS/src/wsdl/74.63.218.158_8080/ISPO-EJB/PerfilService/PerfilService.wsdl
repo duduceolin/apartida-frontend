@@ -2,47 +2,37 @@
   <wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://apartida.com.br/servicos/PerfilService" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://apartida.com.br/servicos/PerfilService">
   <xs:complexType name="inPesquisarPelaEmpresa">
+    <xs:complexContent>
+      <xs:extension base="tns:genericPagination">
+        <xs:sequence>
+          <xs:element name="idEmpresa" type="xs:long"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="genericPagination">
     <xs:sequence>
-      <xs:element name="idEmpresa" type="xs:long"/>
+      <xs:element name="primeiro" type="xs:int"/>
+      <xs:element name="tamanho" type="xs:int"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="outPesquisarPerfis">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="perfil" nillable="true" type="tns:perfilDTO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="perfis" nillable="true" type="tns:perfilFuncDTO"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="perfilDTO">
+  <xs:complexType name="perfilFuncDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" name="empresa" type="tns:empresaDTO"/>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
+      <xs:element minOccurs="0" name="admin" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadePerfilDTO"/>
       <xs:element minOccurs="0" name="id" type="xs:long"/>
       <xs:element minOccurs="0" name="nome" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="empresaDTO">
+  <xs:complexType name="funcionalidadePerfilDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cep" type="xs:string"/>
-      <xs:element minOccurs="0" name="cidade" type="xs:string"/>
-      <xs:element minOccurs="0" name="cnpj" type="xs:string"/>
-      <xs:element minOccurs="0" name="estado" type="xs:string"/>
-      <xs:element minOccurs="0" name="id" type="xs:long"/>
-      <xs:element minOccurs="0" name="nome" type="xs:string"/>
-      <xs:element minOccurs="0" name="pais" type="xs:string"/>
-      <xs:element minOccurs="0" name="plano" type="tns:planoDTO"/>
-      <xs:element minOccurs="0" name="telefone" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="planoDTO">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" minOccurs="0" name="funcionalidades" nillable="true" type="tns:funcionalidadeDTO"/>
-      <xs:element minOccurs="0" name="id" type="xs:long"/>
-      <xs:element minOccurs="0" name="nome" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="funcionalidadeDTO">
-    <xs:sequence>
+      <xs:element minOccurs="0" name="icone" type="xs:string"/>
       <xs:element minOccurs="0" name="idFuncionalidade" type="xs:long"/>
-      <xs:element minOccurs="0" name="idMenuPai" type="xs:long"/>
       <xs:element minOccurs="0" name="nome" type="xs:string"/>
       <xs:element minOccurs="0" name="url" type="xs:string"/>
     </xs:sequence>
