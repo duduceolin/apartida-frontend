@@ -35,4 +35,7 @@ public class UsuarioLogadoController extends BaseController {
         this.usuarioLogado = usuarioLogado;
     }
 
+    public Long getIdEmpresaUsuario() {
+        return usuarioLogado.getPerfil().getEmpresa().getId();
+    }
 }

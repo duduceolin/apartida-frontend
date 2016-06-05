@@ -18,8 +18,8 @@
                     <div class="Container100 Responsive100">
 
                         <h:form id="form">
-                            <p:dataTable id="singleDT" var="perfil" value="#{perfisMockController.perfis}" rowKey="#{perfil.id}"
-                                         rows="10" paginator="true" paginatorPosition="bottom" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            <p:dataTable id="singleDT" var="perfil" value="#{perfilController.dataModel}" rowKey="#{perfil.id}" selection="#{perfil}" selectionMode="single"
+                                         rows="10" paginator="true" lazy="true" paginatorPosition="bottom" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                          rowsPerPageTemplate="5,10,15" emptyMessage="Sem perfis encontrados." reflow="true" >
                                 <f:facet name="header">
                                     Lista de perfis
@@ -33,25 +33,25 @@
                                 <p:column headerText="Nome" sortBy="#{perfil.nome}" width="60%">
                                     <h:outputText value="#{perfil.nome}" />
                                 </p:column>
-                                <p:column headerText="Administrador" sortBy="#{perfil.isAdmin}" width="10%">
-                                    <p:inputSwitch onLabel="Sim" offLabel="Não" value="#{perfil.isAdmin}"/> 
+                                <p:column headerText="Administrador" width="10%">
+                                    <p:outputLabel value="#{(perfil.isAdmin()) ? 'Sim' : 'Não'}"/>
                                 </p:column>
                                 <p:column headerText="Acessos" width="10%">
                                     <p:commandButton value="Editar" update=":form:acessosDetail" oncomplete="PF('acessosDialog').show()">
-                                        <f:setPropertyActionListener value="#{perfil}" target="#{perfisMockController.perfilSelecionado}" />
+                                        <f:setPropertyActionListener value="#{perfil}" target="#{perfilController.perfilSelecionado}" />
                                     </p:commandButton>
                                 </p:column>
                             </p:dataTable>
 
                             <p:dialog header="Acessos" widgetVar="acessosDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" responsive="true" width="400">
                                 <p:outputPanel id="acessosDetail" style="text-align:center;">
-                                    <p:panelGrid  columns="2" rendered="#{not empty perfisMockController.perfilSelecionado}" layout="grid" styleClass="ui-panelgrid-blank">
+                                    <p:panelGrid  columns="2" rendered="#{not empty perfilController.perfilSelecionado}" layout="grid" styleClass="ui-panelgrid-blank">
                                         <h:outputText value="Nome do perfil:" style="font-weight: bold"/>
-                                        <h:outputText value="#{perfisMockController.perfilSelecionado.nome}" />
+                                        <h:outputText value="#{perfilController.perfilSelecionado.nome}" />
                                     </p:panelGrid>
 
-                                    <p:panelGrid  columns="1" rendered="#{not empty perfisMockController.perfilSelecionado and not empty perfisMockController.perfilSelecionado.listaFuncionalidades}" layout="grid" styleClass="ui-panelgrid-blank">
-                                        <p:dataTable id="singleDT2" var="acesso" value="#{perfisMockController.perfilSelecionado.listaFuncionalidades}"
+                                    <p:panelGrid  columns="1" rendered="#{not empty perfilController.perfilSelecionado and not empty perfilController.perfilSelecionado.funcionalidades}" layout="grid" styleClass="ui-panelgrid-blank">
+                                        <p:dataTable id="singleDT2" var="acesso" value="#{perfilController.perfilSelecionado.funcionalidades}"
                                                      paginator="false" emptyMessage="Sem perfis encontrados." reflow="true">
                                             <f:facet name="header">
                                                 Lista de funcionalidades

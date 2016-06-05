@@ -7,6 +7,7 @@ package br.com.apartida.gerenciador.web.util;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.context.PartialViewContext;
 import org.slf4j.Logger;
 
 /**
@@ -31,5 +32,13 @@ public abstract class FacesUtils {
 
     public static void mostrarMensagemFatal(final String mensagem) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal!", mensagem));
+    }
+    
+    public static FacesContext getFaces() {
+        return FacesContext.getCurrentInstance();
+    }
+    
+    public static PartialViewContext getPartialViewContext() {
+        return getFaces().getPartialViewContext();
     }
 }
